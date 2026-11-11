@@ -3,8 +3,6 @@ api_key_vault.py
 mb_core.py
 api_key_vault*.pyd
 api_key_vault*.so
-!mb_core*.pyd
-!mb_core*.so
 vault_build/
 *.build/
 *.dist/
