@@ -10,7 +10,7 @@ Media-Buddy V2 is a new, Python-based, cross-platform successor to the original 
 - **Movies:** Retrieve movie information and artwork, create NFO files, organize movies, and work with trailers and chapter information.
 - **Music videos:** Look up artists, albums, and tracks, create metadata files, and collect available artwork.
 - **Other videos:** Process personal recordings and other videos that do not fit into the usual movie or TV-series categories, including metadata and artwork generated from video frames.
-- **Video conversion and remuxing:** Convert video and audio streams or copy compatible streams without unnecessary re-encoding. Available options include codec, quality, audio, and subtitle handling.
+- **Video conversion and remuxing:** Convert video and audio streams or copy compatible streams without unnecessary re-encoding. Available options include codec, quality, audio, subtitle handling, and Dolby Vision/HDR10+ processing.
 - **Video utilities:** Join compatible video parts, optimize files, and adjust audio normalization or dynamic compression where needed.
 - **Post-processing:** Review and correct metadata, choose artwork or video stills, rename files, and update Matroska tags through a graphical interface.
 - **Video checking:** Quickly review processed videos by automatically playing short samples from the middle and end of each file.
@@ -45,7 +45,7 @@ Some packages are needed only for particular features, but installing all four i
 
 ### External tools
 
-Install the following applications separately and configure their executable paths in Media-Buddy V2:
+Install the following applications separately and configure their executable paths in Media-Buddy V2. **Both `dovi_tool` and `hdr10plus_tool` are essential for the Dolby Vision processing workflows** and must not be omitted:
 
 | Tool | Used for |
 | --- | --- |
@@ -53,6 +53,8 @@ Install the following applications separately and configure their executable pat
 | [MKVToolNix](https://mkvtoolnix.download/) | Matroska remuxing, merging, and metadata operations |
 | [ImageMagick](https://imagemagick.org/) **7 or newer** | Creating and processing artwork |
 | [mpv](https://mpv.io/) | Video preview and playback |
+| [dovi_tool](https://github.com/quietvoid/dovi_tool) | Dolby Vision metadata processing |
+| [hdr10plus_tool](https://github.com/quietvoid/hdr10plus_tool) | HDR10+ dynamic metadata processing, including workflows needed for Dolby Vision conversion |
 
 **Linux notes:**
 
