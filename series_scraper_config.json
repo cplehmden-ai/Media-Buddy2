@@ -1,0 +1,43 @@
+{
+  "Download_Images": true,
+  "TVShow": {
+    "Image_Fanart": true,
+    "Image_Poster": true,
+    "Image_Banner": true,
+    "Image_Episode": true,
+    "Image_SeasonPoster": true,
+    "Image_ClearLogo": true,
+    "Image_ClearArt": true,
+    "FolderSeason": "Staffel",
+    "FolderSeasonSpecial": "Specials",
+    "Create_Episode_NFO_On_Missing_Info": true,
+    "Default_Grabber": "TVDB",
+    "CreateSeasonFolder": true,
+    "RenameFolder": false,
+    "TranslateMissingPlots": true,
+    "Download_Chapters": true,
+    "Translate_Chapters": true
+  },
+  "Filenaming": {
+    "TVShow": {
+      "Image_Fanart": "fanart.jpg",
+      "Image_Poster": "poster.jpg",
+      "Image_Banner": "banner.jpg",
+      "Image_ClearLogo": "clearlogo.png",
+      "Image_ClearArt": "clearart.png",
+      "Image_Episode": "{episodefile}-thumb.jpg",
+      "Image_Season_Poster": "season{season}-poster.jpg",
+      "Image_Season_Banner": "season{season}-banner.jpg"
+    },
+    "Rename": {
+      "TvShow": "{SeasonEpisode} - {Title}",
+      "RenameFiles": true,
+      "TvShowEpisodeScheme": "SxxExx"
+    }
+  },
+  "Overwrite": {
+    "NFO": false,
+    "Artwork": false,
+    "Chapters": false
+  }
+}

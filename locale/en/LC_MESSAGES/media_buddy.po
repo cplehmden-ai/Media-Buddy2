@@ -1,0 +1,2587 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Media-Buddy V2 Test 179\n"
+"POT-Creation-Date: 2026-11-10 12:00+0000\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: wizard_page.py:444
+msgid "0 = do not keep tracks of this type. Default language is set above."
+msgstr "0 = do not keep tracks of this type. Default language is set above."
+
+#: wizard_page.py:455
+msgid "0 – Off"
+msgstr "0 – Off"
+
+#: other_video_page.py:54
+msgid "1 frame"
+msgstr "1 frame"
+
+#: other_video_page.py:55
+msgid "1 frame (new)"
+msgstr "1 frame (new)"
+
+#: wizard_page.py:455
+msgid "1 – Low"
+msgstr "1 – Low"
+
+#: other_video_postprocess.py:176
+msgid "16 frames ready"
+msgstr "16 frames ready"
+
+#: other_video_page.py:54 other_video_page.py:55
+msgid "2 frames"
+msgstr "2 frames"
+
+#: wizard_page.py:455
+msgid "2 – Medium"
+msgstr "2 – Medium"
+
+#: other_video_page.py:55
+msgid "3 frames"
+msgstr "3 frames"
+
+#: wizard_page.py:455
+msgid "3 – High"
+msgstr "3 – High"
+
+#: other_video_page.py:55
+msgid "4 frames"
+msgstr "4 frames"
+
+#: wizard_page.py:455
+msgid "4 – Extreme"
+msgstr "4 – Extreme"
+
+#: other_video_page.py:55
+msgid "5 frames"
+msgstr "5 frames"
+
+#: other_video_page.py:55
+msgid "6 frames"
+msgstr "6 frames"
+
+#: Media_Buddy.py:217 Media_Buddy.py:572
+msgid "About Media-Buddy V2"
+msgstr "About Media-Buddy V2"
+
+#: wizard_page.py:434
+msgid "Add language"
+msgstr "Add language"
+
+#: global_settings_page.py:308
+msgid "Add rule"
+msgstr "Add rule"
+
+#: series_postprocess.py:744
+#, python-brace-format
+msgid "Added episode thumbnail: {media_name}"
+msgstr "Added episode thumbnail: {media_name}"
+
+#: wizard_page.py:427
+msgid "Additional languages (ISO-639-2, e.g. eng, fra, ita)"
+msgstr "Additional languages (ISO-639-2, e.g. eng, fra, ita)"
+
+#: metadata_runtime_ui.py:57 wizard_page.py:239
+msgid "After completion:"
+msgstr "After completion:"
+
+#: global_settings_page.py:291
+msgid "Age certification mapping"
+msgstr "Age certification mapping"
+
+#: musicvideo_postprocess.py:30
+msgid "Album"
+msgstr "Album"
+
+#: global_settings_page.py:208
+msgid "Allow Dolby Vision profile 7 to 8.1 conversion when re-encoding"
+msgstr "Allow Dolby Vision profile 7 to 8.1 conversion when re-encoding"
+
+#: global_settings_page.py:186
+msgid "Allowed audio codecs (one per line)"
+msgstr "Allowed audio codecs (one per line)"
+
+#: global_settings_page.py:184
+msgid "Allowed video codecs (one per line)"
+msgstr "Allowed video codecs (one per line)"
+
+#: global_settings_page.py:182
+msgid "Always encode when bitrate is 0"
+msgstr "Always encode when bitrate is 0"
+
+#: Media_Buddy.py:154
+msgid "Apply to all"
+msgstr "Apply to all"
+
+#: musicvideo_postprocess.py:33 musicvideo_postprocess.py:508 musicvideo_postprocess.py:521
+msgid "Artist"
+msgstr "Artist"
+
+#: global_settings_page.py:121
+msgid "Artist artwork"
+msgstr "Artist artwork"
+
+#: global_settings_page.py:122 global_settings_page.py:135
+msgid "Artist artwork – root directory"
+msgstr "Artist artwork – root directory"
+
+#: musicvideo_postprocess.py:601
+msgid "Artist post-processing"
+msgstr "Artist post-processing"
+
+#: musicvideo_postprocess.py:29
+msgid "Artists (separate multiple with ;)"
+msgstr "Artists (separate multiple with ;)"
+
+#: musicvideo_postprocess.py:141 musicvideo_postprocess.py:144 series_postprocess.py:255 series_postprocess.py:258
+msgid "Artwork"
+msgstr "Artwork"
+
+#: other_video_postprocess.py:209 other_video_postprocess.py:400
+msgid "Artwork generation"
+msgstr "Artwork generation"
+
+#: global_settings_page.py:373
+msgid "Artwork generation will be implemented with the Other Videos wizard."
+msgstr "Artwork generation will be implemented with the Other Videos wizard."
+
+#: series_postprocess.py:213
+msgid "Artwork missing"
+msgstr "Artwork missing"
+
+#: movie_postprocess.py:59 series_postprocess.py:226
+msgid "Artwork missing – click to select"
+msgstr "Artwork missing – click to select"
+
+#: wizard_page.py:743
+msgid "Artwork/NFO created:"
+msgstr "Artwork/NFO created:"
+
+#: wizard_page.py:745
+msgid "Artwork/NFO errors:"
+msgstr "Artwork/NFO errors:"
+
+#: wizard_page.py:744
+msgid "Artwork/NFO skipped:"
+msgstr "Artwork/NFO skipped:"
+
+#: global_settings_page.py:365
+msgid "At least one naming scheme must remain enabled."
+msgstr "At least one naming scheme must remain enabled."
+
+#: wizard_page.py:733
+msgid "Attachment errors:"
+msgstr "Attachment errors:"
+
+#: wizard_page.py:732
+msgid "Attachments embedded:"
+msgstr "Attachments embedded:"
+
+#: gui_i18n.py:78 wizard_page.py:429
+msgid "Audio"
+msgstr "Audio"
+
+#: global_settings_page.py:213
+msgid "Audio codec priority (top = preferred)"
+msgstr "Audio codec priority (top = preferred)"
+
+#: global_settings_page.py:414
+msgid "Audio codec priority contains duplicate entries."
+msgstr "Audio codec priority contains duplicate entries."
+
+#: global_settings_page.py:200
+msgid "Audio in video files"
+msgstr "Audio in video files"
+
+#: wizard_page.py:865
+msgid "Audio mode"
+msgstr "Audio mode"
+
+#: wizard_page.py:559 wizard_page.py:935
+msgid "Audio normalization running"
+msgstr "Audio normalization running"
+
+#: gui_i18n.py:64 wizard_page.py:446
+msgid "Audio processing"
+msgstr "Audio processing"
+
+#: wizard_page.py:421
+msgid "Audio tracks (min. 1)"
+msgstr "Audio tracks (min. 1)"
+
+#: global_settings_page.py:187
+msgid "Audio wizard settings will follow with audio processing."
+msgstr "Audio wizard settings will follow with audio processing."
+
+#: global_settings_page.py:204
+msgid "Automatic"
+msgstr "Automatic"
+
+#: series_postprocess.py:740
+#, python-brace-format
+msgid "Automatic episode thumbnail failed: {error}"
+msgstr "Automatic episode thumbnail failed: {error}"
+
+#: global_settings_page.py:207
+msgid "Automatically reduce quality level when needed"
+msgstr "Automatically reduce quality level when needed"
+
+#: postprocess_save_guard.py:15
+#, python-brace-format
+msgid "Autosave skipped: folder no longer exists: {folder}"
+msgstr "Autosave skipped: folder no longer exists: {folder}"
+
+#: movie_postprocess.py:213 musicvideo_postprocess.py:577 other_video_postprocess.py:132 other_video_postprocess.py:267 series_postprocess.py:330 series_postprocess.py:560
+msgid "Back"
+msgstr "Back"
+
+#: musicvideo_postprocess.py:600
+msgid "Back to music videos"
+msgstr "Back to music videos"
+
+#: wizard_page.py:260
+msgid "Back to wizard"
+msgstr "Back to wizard"
+
+#: other_video_postprocess.py:118
+msgid "Background:"
+msgstr "Background:"
+
+#: other_video_page.py:94
+msgid "Backgrounds and borders"
+msgstr "Backgrounds and borders"
+
+#: wizard_page.py:20
+msgid "Balanced"
+msgstr "Balanced"
+
+#: metadata_page.py:144 metadata_page.py:150 metadata_page.py:156 movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:38 series_postprocess.py:55 wizard_page.py:312
+msgid "Banner"
+msgstr "Banner"
+
+#: musicvideo_postprocess.py:490
+msgid "Biography"
+msgstr "Biography"
+
+#: wizard_page.py:353
+msgid "Border"
+msgstr "Border"
+
+#: other_video_page.py:89
+msgid "Border:"
+msgstr "Border:"
+
+#: musicvideo_postprocess.py:35
+msgid "Born"
+msgstr "Born"
+
+#: global_settings_page.py:431
+msgid "Both file extension lists must contain entries."
+msgstr "Both file extension lists must contain entries."
+
+#: global_settings_page.py:255 metadata_page.py:114 other_video_page.py:43 postprocess_entry.py:17 wizard_page.py:170
+msgid "Browse …"
+msgstr "Browse …"
+
+#: episode_thumb_selector.py:99 musicvideo_postprocess.py:332
+msgid "Cancel"
+msgstr "Cancel"
+
+#: metadata_runtime_ui.py:161 wizard_page.py:816
+msgid "Cancel action"
+msgstr "Cancel action"
+
+#: metadata_runtime_ui.py:49 wizard_page.py:224 wizard_page.py:573 wizard_page.py:590
+msgid "Cancel after current file"
+msgstr "Cancel after current file"
+
+#: metadata_runtime_ui.py:52 wizard_page.py:227
+msgid "Cancel immediately"
+msgstr "Cancel immediately"
+
+#: video_test_page.py:106 video_test_page.py:35
+msgid "Cancel test"
+msgstr "Cancel test"
+
+#: wizard_page.py:606
+msgid "Cancellation after current file requested …"
+msgstr "Cancellation after current file requested …"
+
+#: wizard_page.py:591
+msgid "Cancellation request withdrawn"
+msgstr "Cancellation request withdrawn"
+
+#: global_settings_page.py:455
+msgid "Cannot read configuration file: "
+msgstr "Cannot read configuration file: "
+
+#: global_settings_page.py:275
+msgid "Central movie set artwork folder"
+msgstr "Central movie set artwork folder"
+
+#: global_settings_page.py:212
+msgid "Channels first"
+msgstr "Channels first"
+
+#: global_settings_page.py:211
+msgid "Channels first, then codec"
+msgstr "Channels first, then codec"
+
+#: Media_Buddy.py:803
+msgid "Check again"
+msgstr "Check again"
+
+#: gui_i18n.py:98
+msgid "Check artist artwork and thumbnail"
+msgstr "Check artist artwork and thumbnail"
+
+#: global_settings_page.py:92
+msgid "Check tools"
+msgstr "Check tools"
+
+#: global_settings_page.py:83
+msgid "Choose file"
+msgstr "Choose file"
+
+#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:39 series_postprocess.py:56
+msgid "Clearart"
+msgstr "Clearart"
+
+#: metadata_page.py:146 metadata_page.py:152 metadata_page.py:158 wizard_page.py:312
+msgid "Clearart / Logo"
+msgstr "Clearart / Logo"
+
+#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:39 series_postprocess.py:57
+msgid "Clearlogo"
+msgstr "Clearlogo"
+
+#: Media_Buddy.py:622
+msgid "Close"
+msgstr "Close"
+
+#: global_settings_page.py:212
+msgid "Codec first"
+msgstr "Codec first"
+
+#: other_video_page.py:77
+msgid "Collage:"
+msgstr "Collage:"
+
+#: other_video_postprocess.py:128
+msgid "Collage: select none or 2–6 images"
+msgstr "Collage: select none or 2–6 images"
+
+#: movie_postprocess.py:254
+msgid "Collection description"
+msgstr "Collection description"
+
+#: metadata_page.py:274 other_video_page.py:229
+msgid "Completed successfully"
+msgstr "Completed successfully"
+
+#: global_settings_page.py:52 gui_i18n.py:103
+msgid "Configuration"
+msgstr "Configuration"
+
+#: Media_Buddy.py:793 Media_Buddy.py:798 Media_Buddy.py:843
+msgid "Configuration error"
+msgstr "Configuration error"
+
+#: global_settings_page.py:457
+msgid "Configuration is not a JSON object: "
+msgstr "Configuration is not a JSON object: "
+
+#: gui_i18n.py:105
+msgid "Configured path not found; fallback used"
+msgstr "Configured path not found; fallback used"
+
+#: wizard_page.py:596
+msgid "Confirm cancellation"
+msgstr "Confirm cancellation"
+
+#: wizard_page.py:613
+msgid "Confirm immediate cancellation"
+msgstr "Confirm immediate cancellation"
+
+#: movie_postprocess.py:17 movie_postprocess.py:238 series_postprocess.py:51
+msgid "Content rating"
+msgstr "Content rating"
+
+#: global_settings_page.py:293
+msgid "Convert certifications using the mapping table"
+msgstr "Convert certifications using the mapping table"
+
+#: wizard_page.py:861
+msgid "Copy audio"
+msgstr "Copy audio"
+
+#: wizard_page.py:180
+msgid "Copy video streams and re-encode all audio streams."
+msgstr "Copy video streams and re-encode all audio streams."
+
+#: video_test_page.py:180
+msgid "Could not determine duration"
+msgstr "Could not determine duration"
+
+#: musicvideo_postprocess.py:227
+msgid "Could not determine video duration."
+msgstr "Could not determine video duration."
+
+#: episode_thumb_selector.py:131
+msgid "Could not generate all frames: "
+msgstr "Could not generate all frames: "
+
+#: other_video_postprocess.py:178
+msgid "Could not generate frames"
+msgstr "Could not generate frames"
+
+#: musicvideo_postprocess.py:429
+msgid "Could not load the original still image."
+msgstr "Could not load the original still image."
+
+#: Media_Buddy.py:810
+msgid "Could not open a text editor. File:"
+msgstr "Could not open a text editor. File:"
+
+#: musicvideo_postprocess.py:424
+msgid "Could not read source frame."
+msgstr "Could not read source frame."
+
+#: Media_Buddy.py:540
+#, python-brace-format
+msgid "Could not read the deletion list:\n{exc}"
+msgstr "Could not read the deletion list:\n{exc}"
+
+#: series_postprocess.py:717
+#, python-brace-format
+msgid "Could not read the episode NFO: {exc}"
+msgstr "Could not read the episode NFO: {exc}"
+
+#: musicvideo_postprocess.py:141
+msgid "Could not read the image."
+msgstr "Could not read the image."
+
+#: series_postprocess.py:255
+msgid "Could not read this image format."
+msgstr "Could not read this image format."
+
+#: series_postprocess.py:957
+msgid "Could not save NFO"
+msgstr "Could not save NFO"
+
+#: series_postprocess.py:258
+msgid "Could not save artwork."
+msgstr "Could not save artwork."
+
+#: movie_postprocess.py:409
+msgid "Could not save movie NFO"
+msgstr "Could not save movie NFO"
+
+#: musicvideo_postprocess.py:449
+msgid "Could not save the cover."
+msgstr "Could not save the cover."
+
+#: series_postprocess.py:780
+msgid "Could not save the still image as JPEG."
+msgstr "Could not save the still image as JPEG."
+
+#: musicvideo_postprocess.py:521
+#, python-brace-format
+msgid "Could not save: {exc}"
+msgstr "Could not save: {exc}"
+
+#: video_test_page.py:206
+msgid "Could not start player"
+msgstr "Could not start player"
+
+#: movie_postprocess.py:17 movie_postprocess.py:238
+msgid "Country"
+msgstr "Country"
+
+#: musicvideo_postprocess.py:40 musicvideo_postprocess.py:425 musicvideo_postprocess.py:429 musicvideo_postprocess.py:449 musicvideo_postprocess.py:453
+msgid "Cover"
+msgstr "Cover"
+
+#: gui_i18n.py:97 other_video_page.py:53 wizard_page.py:337
+msgid "Create NFO"
+msgstr "Create NFO"
+
+#: global_settings_page.py:285
+msgid "Create NFO for episodes not found online"
+msgstr "Create NFO for episodes not found online"
+
+#: wizard_page.py:871
+msgid "Create everyday audio track according to engine settings"
+msgstr "Create everyday audio track according to engine settings"
+
+#: other_video_page.py:52 wizard_page.py:318
+msgid "Create fanart"
+msgstr "Create fanart"
+
+#: other_video_page.py:51 wizard_page.py:318
+msgid "Create poster"
+msgstr "Create poster"
+
+#: global_settings_page.py:282
+msgid "Create season folders"
+msgstr "Create season folders"
+
+#: metadata_runtime_ui.py:42 wizard_page.py:211
+msgid "Current file"
+msgstr "Current file"
+
+#: series_postprocess.py:318
+msgid "Custom ID – Type"
+msgstr "Custom ID – Type"
+
+#: series_postprocess.py:319
+msgid "Custom ID – Value"
+msgstr "Custom ID – Value"
+
+#: global_settings_page.py:73
+msgid "Custom paths take precedence. Empty = automatic detection."
+msgstr "Custom paths take precedence. Empty = automatic detection."
+
+#: metadata_page.py:191 wizard_page.py:300
+msgid "Data sources: MusicBrainz / TheAudioDB / Last.fm / Fanart.tv"
+msgstr "Data sources: MusicBrainz / TheAudioDB / Last.fm / Fanart.tv"
+
+#: global_settings_page.py:357
+msgid "Default (Kodi, MediaPortal 2, NextPVR, Plex …)"
+msgstr "Default (Kodi, MediaPortal 2, NextPVR, Plex …)"
+
+#: wizard_page.py:330
+msgid "Default description"
+msgstr "Default description"
+
+#: wizard_page.py:330
+msgid "Default genre"
+msgstr "Default genre"
+
+#: other_video_page.py:59
+msgid "Default genre (optional)"
+msgstr "Default genre (optional)"
+
+#: other_video_page.py:82
+msgid "Default genre:"
+msgstr "Default genre:"
+
+#: other_video_page.py:60
+msgid "Default plot (optional)"
+msgstr "Default plot (optional)"
+
+#: other_video_page.py:84
+msgid "Default plot:"
+msgstr "Default plot:"
+
+#: Media_Buddy.py:540 Media_Buddy.py:543 Media_Buddy.py:557
+msgid "Delete originals"
+msgstr "Delete originals"
+
+#: Media_Buddy.py:564 Media_Buddy.py:566
+msgid "Delete originals – result"
+msgstr "Delete originals – result"
+
+#: Media_Buddy.py:209
+msgid "Delete originals …"
+msgstr "Delete originals …"
+
+#: global_settings_page.py:309
+msgid "Delete selected rule"
+msgstr "Delete selected rule"
+
+#: Media_Buddy.py:560
+#, python-brace-format
+msgid "Deleted: {deleted}\nAlready removed: {missing}\nNot deleted: {errors}"
+msgstr "Deleted: {deleted}\nAlready removed: {missing}\nNot deleted: {errors}"
+
+#: Media_Buddy.py:557
+#, python-brace-format
+msgid "Deletion failed:\n{exc}"
+msgstr "Deletion failed:\n{exc}"
+
+#: movie_postprocess.py:251 musicvideo_postprocess.py:557 other_video_postprocess.py:246 series_postprocess.py:323 series_postprocess.py:539
+msgid "Description"
+msgstr "Description"
+
+#: wizard_page.py:167
+msgid "Destination folder"
+msgstr "Destination folder"
+
+#: Media_Buddy.py:327
+msgid "Destination folder does not exist:"
+msgstr "Destination folder does not exist:"
+
+#: Media_Buddy.py:315 Media_Buddy.py:339
+#, python-brace-format
+msgid "Destination folder does not exist: {target}"
+msgstr "Destination folder does not exist: {target}"
+
+#: Media_Buddy.py:587
+msgid "Developed by"
+msgstr "Developed by"
+
+#: musicvideo_postprocess.py:36
+msgid "Died"
+msgstr "Died"
+
+#: movie_postprocess.py:17
+msgid "Director"
+msgstr "Director"
+
+#: musicvideo_postprocess.py:35
+msgid "Disambiguation"
+msgstr "Disambiguation"
+
+#: musicvideo_postprocess.py:36
+msgid "Disbanded"
+msgstr "Disbanded"
+
+#: movie_postprocess.py:18
+msgid "Discart"
+msgstr "Discart"
+
+#: metadata_runtime_ui.py:9 wizard_page.py:241
+msgid "Do nothing"
+msgstr "Do nothing"
+
+#: metadata_page.py:184 wizard_page.py:295
+msgid "Download artwork"
+msgstr "Download artwork"
+
+#: wizard_page.py:301
+msgid "Download chapters"
+msgstr "Download chapters"
+
+#: global_settings_page.py:276 metadata_page.py:154 wizard_page.py:314
+msgid "Download movie set artwork"
+msgstr "Download movie set artwork"
+
+#: metadata_page.py:153 wizard_page.py:314
+msgid "Download trailers"
+msgstr "Download trailers"
+
+#: wizard_page.py:453
+msgid "Dynamic range compression"
+msgstr "Dynamic range compression"
+
+#: global_settings_page.py:348
+msgid "Each mapping rule needs a target certification and at least one source pattern."
+msgstr "Each mapping rule needs a target certification and at least one source pattern."
+
+#: musicvideo_postprocess.py:575
+msgid "Edit artist"
+msgstr "Edit artist"
+
+#: series_postprocess.py:326
+msgid "Edit episodes"
+msgstr "Edit episodes"
+
+#: Media_Buddy.py:809
+msgid "Editor not found"
+msgstr "Editor not found"
+
+#: Media_Buddy.py:528 metadata_runtime_ui.py:82
+msgid "Elapsed:"
+msgstr "Elapsed:"
+
+#: wizard_page.py:295
+msgid "Embed NFO and artwork in MKV"
+msgstr "Embed NFO and artwork in MKV"
+
+#: global_settings_page.py:185
+msgid "Encode all except listed audio codecs"
+msgstr "Encode all except listed audio codecs"
+
+#: global_settings_page.py:183
+msgid "Encode all except listed video codecs"
+msgstr "Encode all except listed video codecs"
+
+#: global_settings_page.py:202
+msgid "Encoder"
+msgstr "Encoder"
+
+#: global_settings_page.py:203
+msgid "Encoder backend"
+msgstr "Encoder backend"
+
+#: video_test_page.py:192
+msgid "End"
+msgstr "End"
+
+#: Media_Buddy.py:131
+msgid "English"
+msgstr "English"
+
+#: series_postprocess.py:510
+msgid "Episode"
+msgstr "Episode"
+
+#: series_postprocess.py:718
+msgid "Episode NFO"
+msgstr "Episode NFO"
+
+#: series_postprocess.py:660
+#, python-brace-format
+msgid "Episode NFO could not be saved: {exc}"
+msgstr "Episode NFO could not be saved: {exc}"
+
+#: series_postprocess.py:715
+#, python-brace-format
+msgid "Episode loaded: {file_name}"
+msgstr "Episode loaded: {file_name}"
+
+#: series_postprocess.py:522
+msgid "Episode thumbnail"
+msgstr "Episode thumbnail"
+
+#: other_video_page.py:229
+#, python-brace-format
+msgid "Error (RC={code})"
+msgstr "Error (RC={code})"
+
+#: video_test_page.py:298
+msgid "Errors:"
+msgstr "Errors:"
+
+#: global_settings_page.py:74
+msgid "Existing Windows paths are preserved on Linux; PATH fallback is available."
+msgstr "Existing Windows paths are preserved on Linux; PATH fallback is available."
+
+#: Media_Buddy.py:213 Media_Buddy.py:804
+msgid "Exit"
+msgstr "Exit"
+
+#: metadata_runtime_ui.py:10 wizard_page.py:242
+msgid "Exit program"
+msgstr "Exit program"
+
+#: global_settings_page.py:75
+msgid "External programs"
+msgstr "External programs"
+
+#: Media_Buddy.py:586
+msgid "External tools"
+msgstr "External tools"
+
+#: wizard_page.py:23
+msgid "Extremely high quality"
+msgstr "Extremely high quality"
+
+#: wizard_page.py:17
+msgid "Extremely small file"
+msgstr "Extremely small file"
+
+#: series_postprocess.py:448
+msgid "FFmpeg could not generate a still image: "
+msgstr "FFmpeg could not generate a still image: "
+
+#: global_settings_page.py:201
+msgid "Fallback audio codec"
+msgstr "Fallback audio codec"
+
+#: movie_postprocess.py:18 movie_postprocess.py:19 movie_postprocess.py:206 musicvideo_postprocess.py:38 musicvideo_postprocess.py:40 musicvideo_postprocess.py:561 other_video_page.py:93 other_video_postprocess.py:199 other_video_postprocess.py:92 series_postprocess.py:55
+msgid "Fanart"
+msgstr "Fanart"
+
+#: metadata_page.py:143 metadata_page.py:149 metadata_page.py:155 wizard_page.py:312
+msgid "Fanart / Background"
+msgstr "Fanart / Background"
+
+#: wizard_page.py:352
+msgid "Fanart background"
+msgstr "Fanart background"
+
+#: other_video_page.py:88
+msgid "Fanart background:"
+msgstr "Fanart background:"
+
+#: global_settings_page.py:370
+msgid "Fanart filename"
+msgstr "Fanart filename"
+
+#: wizard_page.py:343
+msgid "Fanart frames"
+msgstr "Fanart frames"
+
+#: gui_i18n.py:101
+msgid "Fetch movie information"
+msgstr "Fetch movie information"
+
+#: gui_i18n.py:96
+msgid "Fetch music video metadata"
+msgstr "Fetch music video metadata"
+
+#: Media_Buddy.py:208
+msgid "File"
+msgstr "File"
+
+#: gui_i18n.py:77
+msgid "File names"
+msgstr "File names"
+
+#: video_test_page.py:176
+msgid "File no longer exists"
+msgstr "File no longer exists"
+
+#: series_postprocess.py:759
+#, python-brace-format
+msgid "File not found: {media}"
+msgstr "File not found: {media}"
+
+#: global_settings_page.py:192
+msgid "File types"
+msgstr "File types"
+
+#: metadata_runtime_ui.py:112
+#, python-brace-format
+msgid "File/folder {index} of {total} (%p%)"
+msgstr "File/folder {index} of {total} (%p%)"
+
+#: metadata_page.py:274
+#, python-brace-format
+msgid "Finished with error (RC={code})"
+msgstr "Finished with error (RC={code})"
+
+#: global_settings_page.py:296
+msgid "First matching rule wins. * wildcards are supported; separate multiple patterns with semicolons."
+msgstr "First matching rule wins. * wildcards are supported; separate multiple patterns with semicolons."
+
+#: other_video_page.py:40
+msgid "Folder containing finished videos"
+msgstr "Folder containing finished videos"
+
+#: metadata_page.py:230
+msgid "Folder missing"
+msgstr "Folder missing"
+
+#: other_video_postprocess.py:332
+msgid "Folder not found."
+msgstr "Folder not found."
+
+#: wizard_page.py:425 wizard_page.py:429
+msgid "Forced subtitles"
+msgstr "Forced subtitles"
+
+#: other_video_postprocess.py:123
+msgid "Foreground 1:"
+msgstr "Foreground 1:"
+
+#: other_video_postprocess.py:124
+msgid "Foreground 2:"
+msgstr "Foreground 2:"
+
+#: musicvideo_postprocess.py:36
+msgid "Founded"
+msgstr "Founded"
+
+#: other_video_postprocess.py:101 other_video_postprocess.py:117 other_video_postprocess.py:121
+#, python-brace-format
+msgid "Frame #{number:02d}"
+msgstr "Frame #{number:02d}"
+
+#: musicvideo_postprocess.py:339
+msgid "Frames are being generated in the background …"
+msgstr "Frames are being generated in the background …"
+
+#: series_postprocess.py:756
+msgid "Frames cannot be generated for stub/disc files."
+msgstr "Frames cannot be generated for stub/disc files."
+
+#: other_video_page.py:73
+msgid "Frames:"
+msgstr "Frames:"
+
+#: Media_Buddy.py:127
+msgid "GUI language"
+msgstr "GUI language"
+
+#: musicvideo_postprocess.py:34
+msgid "Gender"
+msgstr "Gender"
+
+#: gui_i18n.py:75
+msgid "General"
+msgstr "General"
+
+#: other_video_postprocess.py:131
+msgid "Generate artwork"
+msgstr "Generate artwork"
+
+#: episode_thumb_selector.py:75
+msgid "Generating 16 frames with FFmpeg …"
+msgstr "Generating 16 frames with FFmpeg …"
+
+#: other_video_postprocess.py:130
+msgid "Generating frames …"
+msgstr "Generating frames …"
+
+#: movie_postprocess.py:17 movie_postprocess.py:236 musicvideo_postprocess.py:31 musicvideo_postprocess.py:37 other_video_postprocess.py:43 series_postprocess.py:51
+msgid "Genre"
+msgstr "Genre"
+
+#: Media_Buddy.py:131
+msgid "German"
+msgstr "German"
+
+#: global_settings_page.py:310 global_settings_page.py:327
+msgid "German preset"
+msgstr "German preset"
+
+#: gui_i18n.py:63
+msgid "Global processing"
+msgstr "Global processing"
+
+#: gui_i18n.py:79 other_video_postprocess.py:385
+msgid "Graphics"
+msgstr "Graphics"
+
+#: global_settings_page.py:354
+msgid "HTPC artwork naming presets"
+msgstr "HTPC artwork naming presets"
+
+#: global_settings_page.py:209
+msgid "Halve 4K frame rate when needed"
+msgstr "Halve 4K frame rate when needed"
+
+#: Media_Buddy.py:216
+msgid "Help"
+msgstr "Help"
+
+#: metadata_runtime_ui.py:11 wizard_page.py:245 wizard_page.py:811
+msgid "Hibernate"
+msgstr "Hibernate"
+
+#: wizard_page.py:21
+msgid "High quality"
+msgstr "High quality"
+
+#: musicvideo_postprocess.py:314
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: gui_i18n.py:95
+msgid "Identify music video"
+msgstr "Identify music video"
+
+#: Media_Buddy.py:272 Media_Buddy.py:275 Media_Buddy.py:385 Media_Buddy.py:506 metadata_page.py:203 metadata_runtime_ui.py:131 other_video_page.py:130
+msgid "Idle"
+msgstr "Idle"
+
+#: wizard_page.py:625
+msgid "Immediate cancellation requested – stopping current process …"
+msgstr "Immediate cancellation requested – stopping current process …"
+
+#: metadata_page.py:269 other_video_page.py:225
+msgid "Immediate stop requested…"
+msgstr "Immediate stop requested…"
+
+#: video_test_page.py:97
+msgid "Include subfolders"
+msgstr "Include subfolders"
+
+#: global_settings_page.py:440
+msgid "Invalid HTPC preset. Allowed: kodi, emby, mediaportal1."
+msgstr "Invalid HTPC preset. Allowed: kodi, emby, mediaportal1."
+
+#: global_settings_page.py:424
+msgid "Invalid artwork filename template: "
+msgstr "Invalid artwork filename template: "
+
+#: global_settings_page.py:411
+msgid "Invalid audio protection mode."
+msgstr "Invalid audio protection mode."
+
+#: series_postprocess.py:655 series_postprocess.py:950
+msgid "Invalid date"
+msgstr "Invalid date"
+
+#: movie_postprocess.py:384
+#, python-brace-format
+msgid "Invalid date, existing value preserved: {exc}"
+msgstr "Invalid date, existing value preserved: {exc}"
+
+#: wizard_page.py:494
+#, python-brace-format
+msgid "Invalid language code on row {row}: {code!r}. Use three-letter ISO language codes."
+msgstr "Invalid language code on row {row}: {code!r}. Use three-letter ISO language codes."
+
+#: global_settings_page.py:409
+msgid "Invalid or duplicate protected audio formats. Allowed: "
+msgstr "Invalid or duplicate protected audio formats. Allowed: "
+
+#: series_postprocess.py:437
+msgid "Invalid video duration"
+msgstr "Invalid video duration"
+
+#: wizard_page.py:180
+msgid "Join all videos in each subfolder without re-encoding."
+msgstr "Join all videos in each subfolder without re-encoding."
+
+#: gui_i18n.py:68
+msgid "Join videos"
+msgstr "Join videos"
+
+#: wizard_page.py:559 wizard_page.py:953
+msgid "Joining videos"
+msgstr "Joining videos"
+
+#: global_settings_page.py:220
+msgid "Keep an additional original audio track"
+msgstr "Keep an additional original audio track"
+
+#: global_settings_page.py:221
+msgid "Keep original audio track only"
+msgstr "Keep original audio track only"
+
+#: wizard_page.py:929
+msgid "Keep source codec (re-encode)"
+msgstr "Keep source codec (re-encode)"
+
+#: movie_postprocess.py:18 movie_postprocess.py:19
+msgid "Keyart"
+msgstr "Keyart"
+
+#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:39
+msgid "Landscape"
+msgstr "Landscape"
+
+#: wizard_page.py:429
+msgid "Language"
+msgstr "Language"
+
+#: wizard_page.py:528
+msgid "Language configuration"
+msgstr "Language configuration"
+
+#: Media_Buddy.py:122
+msgid "Language settings"
+msgstr "Language settings"
+
+#: Media_Buddy.py:182
+msgid "Later"
+msgstr "Later"
+
+#: other_video_postprocess.py:105
+msgid "Loading frame"
+msgstr "Loading frame"
+
+#: musicvideo_postprocess.py:410
+msgid "Loading full-resolution source frame …"
+msgstr "Loading full-resolution source frame …"
+
+#: episode_thumb_selector.py:84
+msgid "Loading …"
+msgstr "Loading …"
+
+#: wizard_page.py:300
+msgid "Local video scraper (offline)"
+msgstr "Local video scraper (offline)"
+
+#: wizard_page.py:735 wizard_page.py:746
+msgid "Log file:"
+msgstr "Log file:"
+
+#: gui_i18n.py:94
+msgid "Matroska tags"
+msgstr "Matroska tags"
+
+#: wizard_page.py:730
+msgid "Matroska tags written:"
+msgstr "Matroska tags written:"
+
+#: series_postprocess.py:802
+#, python-brace-format
+msgid "Media file not found: {media_name}"
+msgstr "Media file not found: {media_name}"
+
+#: metadata_page.py:107 postprocess_entry.py:12
+msgid "Media folder"
+msgstr "Media folder"
+
+#: Media_Buddy.py:583
+msgid "Media-Buddy V2 organizes, converts and prepares movies, TV series, music videos and other videos for media libraries such as Kodi."
+msgstr "Media-Buddy V2 organizes, converts and prepares movies, TV series, music videos and other videos for media libraries such as Kodi."
+
+#: Media_Buddy.py:639
+msgid "Media-Buddy cannot be closed during processing. Please request cancellation after the current file first."
+msgstr "Media-Buddy cannot be closed during processing. Please request cancellation after the current file first."
+
+#: gui_i18n.py:55 movie_postprocess.py:206
+msgid "Metadata"
+msgstr "Metadata"
+
+#: metadata_page.py:182 metadata_page.py:200 wizard_page.py:292 wizard_page.py:384
+msgid "Metadata and artwork"
+msgstr "Metadata and artwork"
+
+#: Media_Buddy.py:127
+msgid "Metadata language"
+msgstr "Metadata language"
+
+#: other_video_page.py:34
+msgid "Metadata: Videos"
+msgstr "Metadata: Videos"
+
+#: metadata_page.py:105
+#, python-brace-format
+msgid "Metadata: {kind}"
+msgstr "Metadata: {kind}"
+
+#: video_test_page.py:192
+msgid "Middle"
+msgstr "Middle"
+
+#: other_video_page.py:186
+msgid "Missing folder"
+msgstr "Missing folder"
+
+#: global_settings_page.py:25
+msgid "Move down"
+msgstr "Move down"
+
+#: global_settings_page.py:25
+msgid "Move up"
+msgstr "Move up"
+
+#: movie_postprocess.py:372
+msgid "Movie NFO"
+msgstr "Movie NFO"
+
+#: movie_postprocess.py:206 movie_postprocess.py:236
+msgid "Movie collection"
+msgstr "Movie collection"
+
+#: movie_postprocess.py:289
+msgid "Movie collection artwork over SMB is currently unavailable in the editor on Linux."
+msgstr "Movie collection artwork over SMB is currently unavailable in the editor on Linux."
+
+#: movie_postprocess.py:290
+#, python-brace-format
+msgid "Movie collection artwork: {exc}"
+msgstr "Movie collection artwork: {exc}"
+
+#: metadata_page.py:112 movie_postprocess.py:185
+msgid "Movie folder"
+msgstr "Movie folder"
+
+#: movie_postprocess.py:370
+#, python-brace-format
+msgid "Movie loaded: {filename}"
+msgstr "Movie loaded: {filename}"
+
+#: wizard_page.py:791
+msgid "Movie post-processing is unavailable."
+msgstr "Movie post-processing is unavailable."
+
+#: gui_i18n.py:60
+msgid "Movie processing"
+msgstr "Movie processing"
+
+#: global_settings_page.py:274
+msgid "Movie rename pattern"
+msgstr "Movie rename pattern"
+
+#: gui_i18n.py:92
+msgid "Movie scraper"
+msgstr "Movie scraper"
+
+#: global_settings_page.py:272 gui_i18n.py:70 movie_postprocess.py:271
+msgid "Movies"
+msgstr "Movies"
+
+#: global_settings_page.py:279
+msgid "Multi-episode NFO in Kodi 22 format"
+msgstr "Multi-episode NFO in Kodi 22 format"
+
+#: global_settings_page.py:278
+msgid "Multi-episode NFO in legacy format"
+msgstr "Multi-episode NFO in legacy format"
+
+#: metadata_page.py:112 musicvideo_postprocess.py:540
+msgid "Music video folder"
+msgstr "Music video folder"
+
+#: gui_i18n.py:61
+msgid "Music video processing"
+msgstr "Music video processing"
+
+#: gui_i18n.py:91
+msgid "Music video scraper"
+msgstr "Music video scraper"
+
+#: metadata_page.py:159 wizard_page.py:316
+msgid "Music video thumbnail"
+msgstr "Music video thumbnail"
+
+#: gui_i18n.py:71 musicvideo_postprocess.py:624 musicvideo_postprocess.py:631 musicvideo_postprocess.py:641 musicvideo_postprocess.py:664
+msgid "Music videos"
+msgstr "Music videos"
+
+#: global_settings_page.py:230
+msgid "Mux external SRT into MKV"
+msgstr "Mux external SRT into MKV"
+
+#: other_video_page.py:94
+msgid "NFO and metadata"
+msgstr "NFO and metadata"
+
+#: series_postprocess.py:956
+#, python-brace-format
+msgid "NFO could not be saved: {exc}"
+msgstr "NFO could not be saved: {exc}"
+
+#: postprocess_save_guard.py:26
+#, python-brace-format
+msgid "NFO could not be saved: {message}"
+msgstr "NFO could not be saved: {message}"
+
+#: series_postprocess.py:650
+#, python-brace-format
+msgid "NFO saved, unable to rename: {rename_warning}"
+msgstr "NFO saved, unable to rename: {rename_warning}"
+
+#: series_postprocess.py:705
+msgid "Negative season number"
+msgstr "Negative season number"
+
+#: video_test_page.py:56
+#, python-brace-format
+msgid "Next video in {seconds:.1f} s"
+msgstr "Next video in {seconds:.1f} s"
+
+#: video_test_page.py:245 video_test_page.py:28
+msgid "Next video:"
+msgstr "Next video:"
+
+#: wizard_page.py:599 wizard_page.py:616
+msgid "No"
+msgstr "No"
+
+#: musicvideo_postprocess.py:505
+msgid "No artist.nfo"
+msgstr "No artist.nfo"
+
+#: series_postprocess.py:685
+#, python-brace-format
+msgid "No episode NFO: {nfo_name}"
+msgstr "No episode NFO: {nfo_name}"
+
+#: series_postprocess.py:795
+msgid "No episode selected for playback."
+msgstr "No episode selected for playback."
+
+#: series_postprocess.py:749
+msgid "No episode selected."
+msgstr "No episode selected."
+
+#: series_postprocess.py:588
+msgid "No episodes found in the series folder."
+msgstr "No episodes found in the series folder."
+
+#: musicvideo_postprocess.py:370
+msgid "No frames generated. "
+msgstr "No frames generated. "
+
+#: movie_postprocess.py:34
+#, python-brace-format
+msgid "No movie NFO: {path}"
+msgstr "No movie NFO: {path}"
+
+#: movie_postprocess.py:276
+msgid "No movies with an NFO were found."
+msgstr "No movies with an NFO were found."
+
+#: musicvideo_postprocess.py:631
+msgid "No music videos with a valid NFO found."
+msgstr "No music videos with a valid NFO found."
+
+#: Media_Buddy.py:543
+msgid "No original files from the last run are marked for deletion."
+msgstr "No original files from the last run are marked for deletion."
+
+#: series_postprocess.py:931
+msgid "No series with video or stub files found."
+msgstr "No series with video or stub files found."
+
+#: series_postprocess.py:76
+#, python-brace-format
+msgid "No tvshow.nfo found: {nfo}"
+msgstr "No tvshow.nfo found: {nfo}"
+
+#: video_test_page.py:138
+msgid "No video files found."
+msgstr "No video files found."
+
+#: other_video_postprocess.py:337
+msgid "No videos with NFO files found."
+msgstr "No videos with NFO files found."
+
+#: wizard_page.py:450
+msgid "Normalization level"
+msgstr "Normalization level"
+
+#: gui_i18n.py:67 wizard_page.py:449
+msgid "Normalize audio"
+msgstr "Normalize audio"
+
+#: wizard_page.py:400
+msgid "Not configured"
+msgstr "Not configured"
+
+#: gui_i18n.py:104
+msgid "Not found"
+msgstr "Not found"
+
+#: wizard_page.py:840
+msgid "Not yet connected"
+msgstr "Not yet connected"
+
+#: global_settings_page.py:220
+msgid "Off"
+msgstr "Off"
+
+#: Media_Buddy.py:585
+msgid "Online metadata and artwork sources"
+msgstr "Online metadata and artwork sources"
+
+#: Media_Buddy.py:802
+msgid "Open in text editor"
+msgstr "Open in text editor"
+
+#: metadata_runtime_ui.py:9 wizard_page.py:244
+msgid "Open post-processing"
+msgstr "Open post-processing"
+
+#: wizard_page.py:419
+msgid "Optimize audio"
+msgstr "Optimize audio"
+
+#: wizard_page.py:419
+msgid "Optimize subtitles"
+msgstr "Optimize subtitles"
+
+#: global_settings_page.py:210
+msgid "Optimizer"
+msgstr "Optimizer"
+
+#: wizard_page.py:467
+msgid "Optimizer and audio processing"
+msgstr "Optimizer and audio processing"
+
+#: wizard_page.py:416
+msgid "Optimizer – language quotas for"
+msgstr "Optimizer – language quotas for"
+
+#: movie_postprocess.py:17 movie_postprocess.py:235 series_postprocess.py:50
+msgid "Original title"
+msgstr "Original title"
+
+#: gui_i18n.py:72 other_video_postprocess.py:332 other_video_postprocess.py:337
+msgid "Other videos"
+msgstr "Other videos"
+
+#: gui_i18n.py:93
+msgid "Other videos scraper"
+msgstr "Other videos scraper"
+
+#: global_settings_page.py:367
+msgid "Other videos – automatically generated artwork"
+msgstr "Other videos – automatically generated artwork"
+
+#: wizard_page.py:737
+msgid "Other videos: cancelled"
+msgstr "Other videos: cancelled"
+
+#: wizard_page.py:739
+msgid "Other videos: completed"
+msgstr "Other videos: completed"
+
+#: wizard_page.py:738
+msgid "Other videos: completed with errors"
+msgstr "Other videos: completed with errors"
+
+#: other_video_page.py:229
+#, python-brace-format
+msgid "Other videos: {status}"
+msgstr "Other videos: {status}"
+
+#: global_settings_page.py:198
+msgid "Output container"
+msgstr "Output container"
+
+#: metadata_runtime_ui.py:37 wizard_page.py:211
+msgid "Overall progress"
+msgstr "Overall progress"
+
+#: Media_Buddy.py:546
+msgid "Permanently delete original files"
+msgstr "Permanently delete original files"
+
+#: Media_Buddy.py:547
+#, python-brace-format
+msgid "Permanently delete {value} original file(s) from the last run?\n\nThe files will not be moved to the Recycle Bin.\nCheck all processing results first.\n\nThis action cannot be undone."
+msgstr "Permanently delete {value} original file(s) from the last run?\n\nThe files will not be moved to the Recycle Bin.\nCheck all processing results first.\n\nThis action cannot be undone."
+
+#: movie_postprocess.py:459
+msgid "Placeholder files cannot be played."
+msgstr "Placeholder files cannot be played."
+
+#: movie_postprocess.py:212 movie_postprocess.py:459 movie_postprocess.py:464 musicvideo_postprocess.py:576 musicvideo_postprocess.py:683 other_video_postprocess.py:266 other_video_postprocess.py:409 series_postprocess.py:558 series_postprocess.py:803 series_postprocess.py:807
+msgid "Play"
+msgstr "Play"
+
+#: video_test_page.py:213
+msgid "Playback failed"
+msgstr "Playback failed"
+
+#: video_test_page.py:223
+msgid "Playback timed out"
+msgstr "Playback timed out"
+
+#: series_postprocess.py:816
+#, python-brace-format
+msgid "Playing: {media_name}"
+msgstr "Playing: {media_name}"
+
+#: other_video_postprocess.py:371
+msgid "Please enter both type and value, or leave both blank."
+msgstr "Please enter both type and value, or leave both blank."
+
+#: other_video_page.py:186
+msgid "Please select a video folder."
+msgstr "Please select a video folder."
+
+#: metadata_page.py:230
+msgid "Please select an existing media folder."
+msgstr "Please select an existing media folder."
+
+#: video_test_page.py:122
+msgid "Please select an existing video folder."
+msgstr "Please select an existing video folder."
+
+#: other_video_postprocess.py:385
+msgid "Please select cover and/or fanart."
+msgstr "Please select cover and/or fanart."
+
+#: other_video_postprocess.py:193
+msgid "Please select different foreground images."
+msgstr "Please select different foreground images."
+
+#: other_video_postprocess.py:199
+msgid "Please select either no images or 2 to 6 collage images."
+msgstr "Please select either no images or 2 to 6 collage images."
+
+#: gui_i18n.py:56
+msgid "Post-process"
+msgstr "Post-process"
+
+#: Media_Buddy.py:315 Media_Buddy.py:326 Media_Buddy.py:338 wizard_page.py:791 wizard_page.py:798 wizard_page.py:806
+msgid "Post-processing"
+msgstr "Post-processing"
+
+#: wizard_page.py:807
+msgid "Post-processing for other videos is unavailable."
+msgstr "Post-processing for other videos is unavailable."
+
+#: movie_postprocess.py:185
+msgid "Post-processing: Movies"
+msgstr "Post-processing: Movies"
+
+#: musicvideo_postprocess.py:540
+msgid "Post-processing: Music videos"
+msgstr "Post-processing: Music videos"
+
+#: series_postprocess.py:841
+msgid "Post-processing: TV series"
+msgstr "Post-processing: TV series"
+
+#: video_test_page.py:90
+msgid "Post-processing: Video test"
+msgstr "Post-processing: Video test"
+
+#: other_video_postprocess.py:219
+msgid "Post-processing: Videos"
+msgstr "Post-processing: Videos"
+
+#: movie_postprocess.py:18 movie_postprocess.py:19 movie_postprocess.py:201 musicvideo_postprocess.py:38 other_video_page.py:93 other_video_postprocess.py:193 other_video_postprocess.py:92 series_postprocess.py:56
+msgid "Poster"
+msgstr "Poster"
+
+#: metadata_page.py:145 metadata_page.py:151 metadata_page.py:157 wizard_page.py:312
+msgid "Poster / Cover"
+msgstr "Poster / Cover"
+
+#: global_settings_page.py:427
+msgid "Poster and fanart must use different filenames."
+msgstr "Poster and fanart must use different filenames."
+
+#: wizard_page.py:351
+msgid "Poster background"
+msgstr "Poster background"
+
+#: other_video_page.py:87
+msgid "Poster background:"
+msgstr "Poster background:"
+
+#: global_settings_page.py:368
+msgid "Poster filename"
+msgstr "Poster filename"
+
+#: wizard_page.py:342
+msgid "Poster frames"
+msgstr "Poster frames"
+
+#: global_settings_page.py:366
+msgid "Poster, disc art and clearlogo are saved under all required filenames."
+msgstr "Poster, disc art and clearlogo are saved under all required filenames."
+
+#: Media_Buddy.py:128
+msgid "Preferred audio language"
+msgstr "Preferred audio language"
+
+#: wizard_page.py:304
+msgid "Preferred source"
+msgstr "Preferred source"
+
+#: Media_Buddy.py:129
+msgid "Preferred subtitle language"
+msgstr "Preferred subtitle language"
+
+#: wizard_page.py:206
+msgid "Preparing"
+msgstr "Preparing"
+
+#: wizard_page.py:582
+msgid "Preparing TV series processing"
+msgstr "Preparing TV series processing"
+
+#: global_settings_page.py:225
+msgid "Preserve source bitrate"
+msgstr "Preserve source bitrate"
+
+#: gui_i18n.py:100
+msgid "Process TV series"
+msgstr "Process TV series"
+
+#: gui_i18n.py:102
+msgid "Process artwork and NFO"
+msgstr "Process artwork and NFO"
+
+#: wizard_page.py:727 wizard_page.py:740
+msgid "Processed:"
+msgstr "Processed:"
+
+#: gui_i18n.py:54 wizard_page.py:159
+msgid "Processing"
+msgstr "Processing"
+
+#: wizard_page.py:729
+msgid "Processing errors:"
+msgstr "Processing errors:"
+
+#: wizard_page.py:724
+msgid "Processing failed:"
+msgstr "Processing failed:"
+
+#: Media_Buddy.py:638
+msgid "Processing in progress"
+msgstr "Processing in progress"
+
+#: metadata_runtime_ui.py:32
+#, python-brace-format
+msgid "Processing metadata: {kind}"
+msgstr "Processing metadata: {kind}"
+
+#: wizard_page.py:559
+msgid "Processing movies"
+msgstr "Processing movies"
+
+#: wizard_page.py:559
+msgid "Processing music videos"
+msgstr "Processing music videos"
+
+#: wizard_page.py:559
+msgid "Processing other videos"
+msgstr "Processing other videos"
+
+#: metadata_page.py:235 metadata_runtime_ui.py:46 other_video_page.py:192
+msgid "Processing …"
+msgstr "Processing …"
+
+#: wizard_page.py:947
+msgid "Processing: Join videos"
+msgstr "Processing: Join videos"
+
+#: wizard_page.py:923
+msgid "Processing: Normalize audio"
+msgstr "Processing: Normalize audio"
+
+#: wizard_page.py:902
+msgid "Processing: Remux videos"
+msgstr "Processing: Remux videos"
+
+#: wizard_page.py:847
+msgid "Processing: Transcode videos"
+msgstr "Processing: Transcode videos"
+
+#: gui_i18n.py:106
+msgid "Project folder Tools/"
+msgstr "Project folder Tools/"
+
+#: gui_i18n.py:107
+msgid "Project folder Tools/ (fallback)"
+msgstr "Project folder Tools/ (fallback)"
+
+#: global_settings_page.py:216
+msgid "Protect audio formats (one codec per line)"
+msgstr "Protect audio formats (one codec per line)"
+
+#: global_settings_page.py:214
+msgid "Protect audio tracks"
+msgstr "Protect audio tracks"
+
+#: global_settings_page.py:223
+msgid "Protect lossless audio tracks"
+msgstr "Protect lossless audio tracks"
+
+#: global_settings_page.py:222
+msgid "Protect surround audio above 5.1"
+msgstr "Protect surround audio above 5.1"
+
+#: global_settings_page.py:219
+msgid "Protection mode"
+msgstr "Protection mode"
+
+#: wizard_page.py:369
+msgid "Quality level (1–7)"
+msgstr "Quality level (1–7)"
+
+#: movie_postprocess.py:17 movie_postprocess.py:239 musicvideo_postprocess.py:32 series_postprocess.py:51
+msgid "Rating"
+msgstr "Rating"
+
+#: wizard_page.py:860
+msgid "Re-encode audio"
+msgstr "Re-encode audio"
+
+#: wizard_page.py:180
+msgid "Re-encode videos and process audio according to the settings."
+msgstr "Re-encode videos and process audio according to the settings."
+
+#: video_test_page.py:100
+msgid "Ready for automatic video testing."
+msgstr "Ready for automatic video testing."
+
+#: gui_i18n.py:65
+msgid "Recode"
+msgstr "Recode"
+
+#: other_video_postprocess.py:259
+msgid "Refresh"
+msgstr "Refresh"
+
+#: other_video_postprocess.py:254
+msgid "Refresh cover"
+msgstr "Refresh cover"
+
+#: other_video_postprocess.py:255
+msgid "Refresh fanart"
+msgstr "Refresh fanart"
+
+#: episode_thumb_selector.py:133 series_postprocess.py:556 series_postprocess.py:755 series_postprocess.py:759 series_postprocess.py:788
+msgid "Refresh thumbnail"
+msgstr "Refresh thumbnail"
+
+#: wizard_page.py:423 wizard_page.py:429
+msgid "Regular subtitles"
+msgstr "Regular subtitles"
+
+#: musicvideo_postprocess.py:32
+msgid "Release"
+msgstr "Release"
+
+#: series_postprocess.py:50
+msgid "Release date"
+msgstr "Release date"
+
+#: movie_postprocess.py:17 movie_postprocess.py:239 series_postprocess.py:519
+msgid "Released"
+msgstr "Released"
+
+#: Media_Buddy.py:562
+msgid "Remove manually:"
+msgstr "Remove manually:"
+
+#: wizard_page.py:436
+msgid "Remove selected"
+msgstr "Remove selected"
+
+#: gui_i18n.py:66
+msgid "Remux"
+msgstr "Remux"
+
+#: wizard_page.py:385
+msgid "Remux thresholds – individual profile for"
+msgstr "Remux thresholds – individual profile for"
+
+#: wizard_page.py:180
+msgid "Remux videos without re-encoding. The optimizer is optional."
+msgstr "Remux videos without re-encoding. The optimizer is optional."
+
+#: global_settings_page.py:273 global_settings_page.py:280
+msgid "Rename files"
+msgstr "Rename files"
+
+#: series_postprocess.py:646
+#, python-brace-format
+msgid "Renamed: {name} ({count} files)"
+msgstr "Renamed: {name} ({count} files)"
+
+#: metadata_page.py:186 wizard_page.py:295
+msgid "Replace NFO"
+msgstr "Replace NFO"
+
+#: metadata_page.py:185 wizard_page.py:295
+msgid "Replace artwork"
+msgstr "Replace artwork"
+
+#: global_settings_page.py:328
+msgid "Replace the current mapping rules with the German preset?"
+msgstr "Replace the current mapping rules with the German preset?"
+
+#: wizard_page.py:369
+msgid "Resolution"
+msgstr "Resolution"
+
+#: Media_Buddy.py:183
+msgid "Restart now"
+msgstr "Restart now"
+
+#: Media_Buddy.py:180
+msgid "Restart required"
+msgstr "Restart required"
+
+#: movie_postprocess.py:211 movie_postprocess.py:451 series_postprocess.py:328
+msgid "Retag"
+msgstr "Retag"
+
+#: series_postprocess.py:899
+msgid "Retag TV series"
+msgstr "Retag TV series"
+
+#: series_postprocess.py:896
+#, python-brace-format
+msgid "Retagging completed: {ok}/{total} episodes, {errors} errors"
+msgstr "Retagging completed: {ok}/{total} episodes, {errors} errors"
+
+#: series_postprocess.py:894
+#, python-brace-format
+msgid "Retagging failed: {detail}"
+msgstr "Retagging failed: {detail}"
+
+#: movie_postprocess.py:45
+#, python-brace-format
+msgid "Retagging failed: {exc}"
+msgstr "Retagging failed: {exc}"
+
+#: movie_postprocess.py:453
+msgid "Retagging …"
+msgstr "Retagging …"
+
+#: movie_postprocess.py:446
+msgid "Retagging: Only Matroska files can be tagged."
+msgstr "Retagging: Only Matroska files can be tagged."
+
+#: series_postprocess.py:881
+#, python-brace-format
+msgid "Retagging: {folder_name} – {index}/{total}: {name}"
+msgstr "Retagging: {folder_name} – {index}/{total}: {name}"
+
+#: series_postprocess.py:886
+#, python-brace-format
+msgid "Retagging: {folder_name} …"
+msgstr "Retagging: {folder_name} …"
+
+#: movie_postprocess.py:44
+#, python-brace-format
+msgid "Retagging: {status} – {message}"
+msgstr "Retagging: {status} – {message}"
+
+#: musicvideo_postprocess.py:30
+msgid "Runtime (minutes)"
+msgstr "Runtime (minutes)"
+
+#: musicvideo_postprocess.py:496
+msgid "Save artist NFO"
+msgstr "Save artist NFO"
+
+#: series_postprocess.py:661
+msgid "Save error"
+msgstr "Save error"
+
+#: Media_Buddy.py:176 Media_Buddy.py:671 global_settings_page.py:469 wizard_page.py:535
+msgid "Save failed"
+msgstr "Save failed"
+
+#: musicvideo_postprocess.py:144
+msgid "Save failed."
+msgstr "Save failed."
+
+#: Media_Buddy.py:157 global_settings_page.py:68 metadata_page.py:124 other_video_page.py:113 wizard_page.py:184
+msgid "Save settings"
+msgstr "Save settings"
+
+#: musicvideo_postprocess.py:331
+msgid "Save square cover"
+msgstr "Save square cover"
+
+#: Media_Buddy.py:191 global_settings_page.py:475 wizard_page.py:537
+msgid "Saved"
+msgstr "Saved"
+
+#: gui_i18n.py:99
+msgid "Scraper finished"
+msgstr "Scraper finished"
+
+#: wizard_page.py:734
+msgid "Scraper return code:"
+msgstr "Scraper return code:"
+
+#: series_postprocess.py:510
+msgid "Season"
+msgstr "Season"
+
+#: global_settings_page.py:283
+msgid "Season folder name"
+msgstr "Season folder name"
+
+#: metadata_page.py:148 wizard_page.py:320
+msgid "Season poster / banner"
+msgstr "Season poster / banner"
+
+#: series_postprocess.py:902
+msgid "Select TV series folder"
+msgstr "Select TV series folder"
+
+#: musicvideo_postprocess.py:310
+msgid "Select a frame, then move the square crop."
+msgstr "Select a frame, then move the square crop."
+
+#: musicvideo_postprocess.py:688
+msgid "Select artist folder"
+msgstr "Select artist folder"
+
+#: musicvideo_postprocess.py:136 series_postprocess.py:248
+msgid "Select artwork"
+msgstr "Select artwork"
+
+#: musicvideo_postprocess.py:574
+msgid "Select cover"
+msgstr "Select cover"
+
+#: global_settings_page.py:125
+msgid "Select directory"
+msgstr "Select directory"
+
+#: episode_thumb_selector.py:67
+msgid "Select episode thumbnail"
+msgstr "Select episode thumbnail"
+
+#: other_video_page.py:181 wizard_page.py:501
+msgid "Select folder"
+msgstr "Select folder"
+
+#: musicvideo_postprocess.py:312
+msgid "Select frame"
+msgstr "Select frame"
+
+#: other_video_postprocess.py:92
+#, python-brace-format
+msgid "Select frames for {artwork}"
+msgstr "Select frames for {artwork}"
+
+#: other_video_postprocess.py:256
+msgid "Select images manually"
+msgstr "Select images manually"
+
+#: metadata_page.py:216
+msgid "Select media folder"
+msgstr "Select media folder"
+
+#: movie_postprocess.py:262
+msgid "Select movie folder"
+msgstr "Select movie folder"
+
+#: global_settings_page.py:266
+msgid "Select movie set artwork folder"
+msgstr "Select movie set artwork folder"
+
+#: musicvideo_postprocess.py:617
+msgid "Select music video folder"
+msgstr "Select music video folder"
+
+#: global_settings_page.py:100
+msgid "Select program"
+msgstr "Select program"
+
+#: musicvideo_postprocess.py:306
+msgid "Select square music video cover"
+msgstr "Select square music video cover"
+
+#: other_video_postprocess.py:327 video_test_page.py:115
+msgid "Select video folder"
+msgstr "Select video folder"
+
+#: wizard_page.py:819 wizard_page.py:834
+msgid "Select “Cancel action” to keep the computer running."
+msgstr "Select “Cancel action” to keep the computer running."
+
+#: series_postprocess.py:504
+msgid "Series title"
+msgstr "Series title"
+
+#: Media_Buddy.py:149
+msgid "Set all languages to"
+msgstr "Set all languages to"
+
+#: Media_Buddy.py:850
+msgid "Setting up Media-Buddy V2"
+msgstr "Setting up Media-Buddy V2"
+
+#: Media_Buddy.py:846
+msgid "Setting up Media-Buddy V2.\nMissing configuration files were created with default settings.\nExisting settings are preserved.\n\n"
+msgstr "Setting up Media-Buddy V2.\nMissing configuration files were created with default settings.\nExisting settings are preserved.\n\n"
+
+#: gui_i18n.py:58
+msgid "Settings"
+msgstr "Settings"
+
+#: Media_Buddy.py:192 global_settings_page.py:475
+msgid "Settings saved."
+msgstr "Settings saved."
+
+#: musicvideo_postprocess.py:583
+msgid "Shared artist post-processing will follow with the music module"
+msgstr "Shared artist post-processing will follow with the music module"
+
+#: global_settings_page.py:130
+msgid "Shared folder for music videos and future music management."
+msgstr "Shared folder for music videos and future music management."
+
+#: metadata_runtime_ui.py:11 wizard_page.py:811
+msgid "Shut down"
+msgstr "Shut down"
+
+#: wizard_page.py:245
+msgid "Shut down PC"
+msgstr "Shut down PC"
+
+#: other_video_page.py:64
+msgid "Simple light border"
+msgstr "Simple light border"
+
+#: wizard_page.py:728 wizard_page.py:741
+msgid "Skipped:"
+msgstr "Skipped:"
+
+#: wizard_page.py:19
+msgid "Small file"
+msgstr "Small file"
+
+#: global_settings_page.py:204
+msgid "Software"
+msgstr "Software"
+
+#: global_settings_page.py:206
+msgid "Software fallback"
+msgstr "Software fallback"
+
+#: musicvideo_postprocess.py:34
+msgid "Sort name"
+msgstr "Sort name"
+
+#: movie_postprocess.py:17 movie_postprocess.py:234 other_video_postprocess.py:43 series_postprocess.py:49
+msgid "Sort title"
+msgstr "Sort title"
+
+#: global_settings_page.py:287
+msgid "Sort titles and other legacy V1 options will be reviewed after the movie wizard."
+msgstr "Sort titles and other legacy V1 options will be reviewed after the movie wizard."
+
+#: wizard_page.py:163
+msgid "Source and destination folders"
+msgstr "Source and destination folders"
+
+#: wizard_page.py:547
+msgid "Source and destination folders must exist."
+msgstr "Source and destination folders must exist."
+
+#: wizard_page.py:549
+msgid "Source and destination folders must not be nested."
+msgstr "Source and destination folders must not be nested."
+
+#: global_settings_page.py:298
+msgid "Source certifications / patterns"
+msgstr "Source certifications / patterns"
+
+#: wizard_page.py:167
+msgid "Source folder"
+msgstr "Source folder"
+
+#: metadata_page.py:189 wizard_page.py:300
+msgid "Source: TMDB"
+msgstr "Source: TMDB"
+
+#: global_settings_page.py:284
+msgid "Specials folder name"
+msgstr "Specials folder name"
+
+#: metadata_runtime_ui.py:10 wizard_page.py:245 wizard_page.py:811
+msgid "Standby"
+msgstr "Standby"
+
+#: metadata_page.py:127 other_video_page.py:116 postprocess_entry.py:24 video_test_page.py:92 wizard_page.py:187
+msgid "Start"
+msgstr "Start"
+
+#: metadata_runtime_ui.py:100 metadata_runtime_ui.py:35 metadata_runtime_ui.py:72
+msgid "Starting scraper…"
+msgstr "Starting scraper…"
+
+#: movie_postprocess.py:17 movie_postprocess.py:240 series_postprocess.py:52
+msgid "Status"
+msgstr "Status"
+
+#: other_video_postprocess.py:179
+msgid "Still images"
+msgstr "Still images"
+
+#: other_video_page.py:213
+msgid "Stop after the current file requested …"
+msgstr "Stop after the current file requested …"
+
+#: other_video_page.py:206
+msgid "Stop after the current file?"
+msgstr "Stop after the current file?"
+
+#: metadata_page.py:248
+msgid "Stop after the current file?\nThe current file will finish processing."
+msgstr "Stop after the current file?\nThe current file will finish processing."
+
+#: metadata_page.py:261 other_video_page.py:217
+msgid "Stop immediately"
+msgstr "Stop immediately"
+
+#: metadata_page.py:247 other_video_page.py:205
+msgid "Stop processing"
+msgstr "Stop processing"
+
+#: wizard_page.py:614
+msgid "Stop processing IMMEDIATELY?\nThe current output file will remain incomplete.\nOriginal files remain unchanged."
+msgstr "Stop processing IMMEDIATELY?\nThe current output file will remain incomplete.\nOriginal files remain unchanged."
+
+#: wizard_page.py:597
+msgid "Stop processing after the current file?\nOriginal files remain unchanged."
+msgstr "Stop processing after the current file?\nOriginal files remain unchanged."
+
+#: metadata_page.py:262 other_video_page.py:218
+msgid "Stop processing immediately?\nThe current file may be incomplete."
+msgstr "Stop processing immediately?\nThe current file may be incomplete."
+
+#: metadata_page.py:254
+msgid "Stop requested – finishing current file…"
+msgstr "Stop requested – finishing current file…"
+
+#: metadata_page.py:274 other_video_page.py:229
+msgid "Stopped"
+msgstr "Stopped"
+
+#: global_settings_page.py:197
+msgid "Stub file extensions (one per line)"
+msgstr "Stub file extensions (one per line)"
+
+#: movie_postprocess.py:17 movie_postprocess.py:236 series_postprocess.py:52
+msgid "Studio"
+msgstr "Studio"
+
+#: musicvideo_postprocess.py:31
+msgid "Studio / Label"
+msgstr "Studio / Label"
+
+#: global_settings_page.py:229
+msgid "Subtitles"
+msgstr "Subtitles"
+
+#: global_settings_page.py:218
+msgid "Supported format identifiers: "
+msgstr "Supported format identifiers: "
+
+#: gui_i18n.py:108
+msgid "System PATH"
+msgstr "System PATH"
+
+#: gui_i18n.py:109
+msgid "System PATH (fallback)"
+msgstr "System PATH (fallback)"
+
+#: metadata_runtime_ui.py:158 wizard_page.py:813
+msgid "System action after completion"
+msgstr "System action after completion"
+
+#: metadata_runtime_ui.py:175 wizard_page.py:832
+msgid "System action failed"
+msgstr "System action failed"
+
+#: global_settings_page.py:277 gui_i18n.py:69 series_postprocess.py:914
+msgid "TV series"
+msgstr "TV series"
+
+#: metadata_page.py:112 series_postprocess.py:841
+msgid "TV series folder"
+msgstr "TV series folder"
+
+#: gui_i18n.py:59
+msgid "TV series processing"
+msgstr "TV series processing"
+
+#: wizard_page.py:726
+msgid "TV series processing cancelled"
+msgstr "TV series processing cancelled"
+
+#: wizard_page.py:726
+msgid "TV series processing completed"
+msgstr "TV series processing completed"
+
+#: wizard_page.py:726
+msgid "TV series processing completed with errors"
+msgstr "TV series processing completed with errors"
+
+#: wizard_page.py:201 wizard_page.py:559
+msgid "TV series processing in progress"
+msgstr "TV series processing in progress"
+
+#: wizard_page.py:723
+msgid "TV series processing: error"
+msgstr "TV series processing: error"
+
+#: global_settings_page.py:281
+msgid "TV series rename pattern"
+msgstr "TV series rename pattern"
+
+#: gui_i18n.py:90
+msgid "TV series scraper"
+msgstr "TV series scraper"
+
+#: series_postprocess.py:1003
+msgid "TV show NFO"
+msgstr "TV show NFO"
+
+#: series_postprocess.py:992
+#, python-brace-format
+msgid "TV show folder no longer exists: {self_current}"
+msgstr "TV show folder no longer exists: {self_current}"
+
+#: wizard_page.py:799
+msgid "TV show post-processing is unavailable."
+msgstr "TV show post-processing is unavailable."
+
+#: wizard_page.py:731
+msgid "Tagging errors:"
+msgstr "Tagging errors:"
+
+#: movie_postprocess.py:17 movie_postprocess.py:235
+msgid "Tagline"
+msgstr "Tagline"
+
+#: global_settings_page.py:226
+msgid "Target audio bitrates (kbit/s)"
+msgstr "Target audio bitrates (kbit/s)"
+
+#: wizard_page.py:873 wizard_page.py:932
+msgid "Target audio codec"
+msgstr "Target audio codec"
+
+#: global_settings_page.py:298
+msgid "Target certification"
+msgstr "Target certification"
+
+#: wizard_page.py:378
+msgid "Target codec"
+msgstr "Target codec"
+
+#: Media_Buddy.py:799
+msgid "The JSON configuration file is damaged."
+msgstr "The JSON configuration file is damaged."
+
+#: series_postprocess.py:652
+#, python-brace-format
+msgid "The NFO was saved.\n{rename_warning}"
+msgstr "The NFO was saved.\n{rename_warning}"
+
+#: wizard_page.py:840
+msgid "The batch start is not yet connected to the Mission Manager.\nNo files were changed."
+msgstr "The batch start is not yet connected to the Mission Manager.\nNo files were changed."
+
+#: series_postprocess.py:803
+#, python-brace-format
+msgid "The file was not found:\n{media}"
+msgstr "The file was not found:\n{media}"
+
+#: Media_Buddy.py:801
+msgid "The file will not be overwritten automatically."
+msgstr "The file will not be overwritten automatically."
+
+#: wizard_page.py:537
+msgid "The global Media-Buddy.json was not modified."
+msgstr "The global Media-Buddy.json was not modified."
+
+#: Media_Buddy.py:160
+msgid "The language change takes effect after restarting the program."
+msgstr "The language change takes effect after restarting the program."
+
+#: Media_Buddy.py:260 Media_Buddy.py:475
+msgid "The main window and navigation are ready.\nWizards and other functions will be added step by step."
+msgstr "The main window and navigation are ready.\nWizards and other functions will be added step by step."
+
+#: Media_Buddy.py:181
+msgid "The new GUI language takes effect after restarting. Restart now?"
+msgstr "The new GUI language takes effect after restarting. Restart now?"
+
+#: Media_Buddy.py:473
+msgid "The originals from the last run can be deleted after confirmation via File → Delete originals."
+msgstr "The originals from the last run can be deleted after confirmation via File → Delete originals."
+
+#: global_settings_page.py:313
+msgid "The scraper prefers available local certifications; mapping is a fallback."
+msgstr "The scraper prefers available local certifications; mapping is a fallback."
+
+#: movie_postprocess.py:271 musicvideo_postprocess.py:624 series_postprocess.py:914
+msgid "The selected folder does not exist."
+msgstr "The selected folder does not exist."
+
+#: series_postprocess.py:774
+msgid "The selected frame could not be read."
+msgstr "The selected frame could not be read."
+
+#: global_settings_page.py:372
+#, python-brace-format
+msgid "The {movie} placeholder represents the final video filename without its extension."
+msgstr "The {movie} placeholder represents the final video filename without its extension."
+
+#: series_postprocess.py:808
+msgid "This episode is a stub or disc placeholder and contains no playable video."
+msgstr "This episode is a stub or disc placeholder and contains no playable video."
+
+#: Media_Buddy.py:605
+msgid "This product uses the TMDB API but is not endorsed or certified by TMDB."
+msgstr "This product uses the TMDB API but is not endorsed or certified by TMDB."
+
+#: global_settings_page.py:61
+msgid "This section will follow after video processing is complete."
+msgstr "This section will follow after video processing is complete."
+
+#: wizard_page.py:180
+msgid "This wizard is not yet connected."
+msgstr "This wizard is not yet connected."
+
+#: metadata_page.py:147 wizard_page.py:320
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: series_postprocess.py:787
+#, python-brace-format
+msgid "Thumbnail could not be replaced: {exc}"
+msgstr "Thumbnail could not be replaced: {exc}"
+
+#: series_postprocess.py:785
+#, python-brace-format
+msgid "Thumbnail replaced: {target_name}"
+msgstr "Thumbnail replaced: {target_name}"
+
+#: movie_postprocess.py:17 movie_postprocess.py:234 musicvideo_postprocess.py:29 other_video_postprocess.py:43 series_postprocess.py:49 series_postprocess.py:504
+msgid "Title"
+msgstr "Title"
+
+#: gui_i18n.py:57 gui_i18n.py:74 gui_i18n.py:80
+msgid "Tools"
+msgstr "Tools"
+
+#: Media_Buddy.py:529
+msgid "Total:"
+msgstr "Total:"
+
+#: musicvideo_postprocess.py:31
+msgid "Track"
+msgstr "Track"
+
+#: musicvideo_postprocess.py:34
+msgid "Type"
+msgstr "Type"
+
+#: series_postprocess.py:819
+msgid "Unable to play"
+msgstr "Unable to play"
+
+#: series_postprocess.py:818
+#, python-brace-format
+msgid "Unable to play: {exc}"
+msgstr "Unable to play: {exc}"
+
+#: series_postprocess.py:651
+msgid "Unable to rename"
+msgstr "Unable to rename"
+
+#: global_settings_page.py:117
+msgid "Unavailable"
+msgstr "Unavailable"
+
+#: wizard_page.py:605
+msgid "Undo cancellation"
+msgstr "Undo cancellation"
+
+#: series_postprocess.py:692
+#, python-brace-format
+msgid "Unexpected NFO element: {tag}"
+msgstr "Unexpected NFO element: {tag}"
+
+#: series_postprocess.py:80
+#, python-brace-format
+msgid "Unexpected NFO root element: {tag}"
+msgstr "Unexpected NFO root element: {tag}"
+
+#: other_video_postprocess.py:243
+msgid "Unique ID type"
+msgstr "Unique ID type"
+
+#: series_postprocess.py:806
+#, python-brace-format
+msgid "Unplayable placeholder file: {media_name}"
+msgstr "Unplayable placeholder file: {media_name}"
+
+#: wizard_page.py:336
+msgid "Use MediaInfo as description"
+msgstr "Use MediaInfo as description"
+
+#: other_video_page.py:58
+msgid "Use MediaInfo as plot"
+msgstr "Use MediaInfo as plot"
+
+#: global_settings_page.py:224
+msgid "Use everyday default profile"
+msgstr "Use everyday default profile"
+
+#: other_video_page.py:57 wizard_page.py:335
+msgid "Use folder name as genre"
+msgstr "Use folder name as genre"
+
+#: wizard_page.py:868
+msgid "Use global setting"
+msgstr "Use global setting"
+
+#: global_settings_page.py:205
+msgid "Use hardware encoding"
+msgstr "Use hardware encoding"
+
+#: episode_thumb_selector.py:95
+msgid "Use selected image"
+msgstr "Use selected image"
+
+#: musicvideo_postprocess.py:316
+msgid "Vertical"
+msgstr "Vertical"
+
+#: wizard_page.py:22
+msgid "Very high quality"
+msgstr "Very high quality"
+
+#: wizard_page.py:18
+msgid "Very small file"
+msgstr "Very small file"
+
+#: gui_i18n.py:76
+msgid "Video"
+msgstr "Video"
+
+#: global_settings_page.py:430
+msgid "Video and stub file extensions must not overlap."
+msgstr "Video and stub file extensions must not overlap."
+
+#: wizard_page.py:388
+msgid "Video bitrate thresholds per resolution in kbit/s.\n0 = not configured yet (no automatic decision).\nThe wizard compares these values against the source video bitrate."
+msgstr "Video bitrate thresholds per resolution in kbit/s.\n0 = not configured yet (no automatic decision).\nThe wizard compares these values against the source video bitrate."
+
+#: wizard_page.py:742
+msgid "Video errors:"
+msgstr "Video errors:"
+
+#: global_settings_page.py:196
+msgid "Video file extensions (one per line)"
+msgstr "Video file extensions (one per line)"
+
+#: other_video_page.py:37 other_video_page.py:41 other_video_postprocess.py:219 video_test_page.py:90
+msgid "Video folder"
+msgstr "Video folder"
+
+#: other_video_page.py:62 other_video_page.py:63
+msgid "Video frame (blurred)"
+msgstr "Video frame (blurred)"
+
+#: wizard_page.py:355
+msgid "Video frame / Default"
+msgstr "Video frame / Default"
+
+#: gui_i18n.py:62
+msgid "Video processing"
+msgstr "Video processing"
+
+#: wizard_page.py:411
+msgid "Video quality and remux thresholds"
+msgstr "Video quality and remux thresholds"
+
+#: wizard_page.py:853
+msgid "Video quality and target codec"
+msgstr "Video quality and target codec"
+
+#: wizard_page.py:367
+msgid "Video quality – individual profile for"
+msgstr "Video quality – individual profile for"
+
+#: wizard_page.py:559 wizard_page.py:911
+msgid "Video remuxing in progress"
+msgstr "Video remuxing in progress"
+
+#: gui_i18n.py:73 video_test_page.py:122 video_test_page.py:128 video_test_page.py:135 video_test_page.py:138 video_test_page.py:23
+msgid "Video test"
+msgstr "Video test"
+
+#: video_test_page.py:295
+msgid "Video test cancelled."
+msgstr "Video test cancelled."
+
+#: video_test_page.py:295
+msgid "Video test completed."
+msgstr "Video test completed."
+
+#: wizard_page.py:559 wizard_page.py:878
+msgid "Video transcoding in progress"
+msgstr "Video transcoding in progress"
+
+#: wizard_page.py:653
+#, python-brace-format
+msgid "Video {index} of {total}: {filename}"
+msgstr "Video {index} of {total}: {filename}"
+
+#: Media_Buddy.py:493
+#, python-brace-format
+msgid "Video {index}/{total}: {filename}"
+msgstr "Video {index}/{total}: {filename}"
+
+#: Media_Buddy.py:364 wizard_page.py:159 wizard_page.py:416
+msgid "Videos"
+msgstr "Videos"
+
+#: wizard_page.py:327
+msgid "Videos – local metadata"
+msgstr "Videos – local metadata"
+
+#: wizard_page.py:310
+msgid "Which artwork should be generated?"
+msgstr "Which artwork should be generated?"
+
+#: metadata_page.py:194 wizard_page.py:310
+msgid "Which artwork to download?"
+msgstr "Which artwork to download?"
+
+#: wizard_page.py:551
+msgid "Wizard"
+msgstr "Wizard"
+
+#: global_settings_page.py:181
+msgid "Wizard options"
+msgstr "Wizard options"
+
+#: wizard_page.py:537
+msgid "Wizard settings saved:"
+msgstr "Wizard settings saved:"
+
+#: gui_i18n.py:53 wizard_page.py:159
+msgid "Wizards"
+msgstr "Wizards"
+
+#: movie_postprocess.py:17
+msgid "Writer"
+msgstr "Writer"
+
+#: movie_postprocess.py:17 movie_postprocess.py:240 musicvideo_postprocess.py:30 other_video_postprocess.py:43
+msgid "Year"
+msgstr "Year"
+
+#: wizard_page.py:598 wizard_page.py:615
+msgid "Yes"
+msgstr "Yes"
+
+#: musicvideo_postprocess.py:320
+msgid "Zoom"
+msgstr "Zoom"
+
+#: wizard_page.py:819 wizard_page.py:834
+msgid "in"
+msgstr "in"
+
+#: wizard_page.py:735
+msgid "not available"
+msgstr "not available"
+
+#: wizard_page.py:819 wizard_page.py:834
+msgid "seconds."
+msgstr "seconds."
+
+#: metadata_runtime_ui.py:177 metadata_runtime_ui.py:178
+#, python-brace-format
+msgid "{action} in {seconds} seconds.\nSelect “Cancel action” to keep the computer running."
+msgstr "{action} in {seconds} seconds.\nSelect “Cancel action” to keep the computer running."
+
+#: episode_thumb_selector.py:137
+#, python-brace-format
+msgid "{count} frames available – select one to use."
+msgstr "{count} frames available – select one to use."
+
+#: musicvideo_postprocess.py:366
+#, python-brace-format
+msgid "{count} frames ready."
+msgstr "{count} frames ready."
+
+#: episode_thumb_selector.py:119
+#, python-brace-format
+msgid "{count}/16 frames generated – select one."
+msgstr "{count}/16 frames generated – select one."
+
+#: series_postprocess.py:951
+#, python-brace-format
+msgid "{date_warning}\n\nThe existing date in the NFO is preserved. Other changes were saved and editing can continue."
+msgstr "{date_warning}\n\nThe existing date in the NFO is preserved. Other changes were saved and editing can continue."
+
+#: series_postprocess.py:655
+#, python-brace-format
+msgid "{date_warning}\nThe existing date is preserved."
+msgstr "{date_warning}\nThe existing date is preserved."
+
+#: series_postprocess.py:654
+#, python-brace-format
+msgid "{date_warning} – date unchanged, other episode fields saved"
+msgstr "{date_warning} – date unchanged, other episode fields saved"
+
+#: series_postprocess.py:948
+#, python-brace-format
+msgid "{date_warning} – date unchanged, remaining metadata saved."
+msgstr "{date_warning} – date unchanged, remaining metadata saved."
+
+#: Media_Buddy.py:563
+#, python-brace-format
+msgid "{path}\n  Reason: {reason}"
+msgstr "{path}\n  Reason: {reason}"

@@ -1,0 +1,41 @@
+{
+  "Download_Images": true,
+  "Movies": {
+    "Image_Poster": true,
+    "Image_Thumb": true,
+    "Image_Banner": true,
+    "Image_Backdrop": true,
+    "Image_ClearLogo": true,
+    "Image_ClearArt": true,
+    "Image_Disc": true,
+    "Trailer_Download": true,
+    "Image_Keyart": true,
+    "TranslateMissingTexts": true,
+    "Download_Chapters": true,
+    "Translate_Chapters": true
+  },
+  "Filenaming": {
+    "Movie": {
+      "Image_Poster": "poster.jpg",
+      "Image_Thumb": "landscape.jpg",
+      "Image_Banner": "banner.jpg",
+      "Image_Fanart": "fanart.jpg",
+      "Image_ClearLogo": "clearlogo.png",
+      "Image_ClearArt": "clearart.png",
+      "Image_Disc": "discart.png",
+      "File_NFO": "{movie}.nfo",
+      "Image_Keyart": "keyart.jpg"
+    },
+    "Rename": {
+      "Movie": "{Title} ({Year})\\{Title}",
+      "RenameFiles": true
+    }
+  },
+  "Overwrite": {
+    "NFO": false,
+    "Artwork": false,
+    "Chapters": false
+  },
+  "Movieset_Artwork": "",
+  "Download_Movieset_Images": true
+}

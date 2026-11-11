@@ -1,0 +1,8 @@
+# Media-Buddy V2 - Python-Abhaengigkeiten (Stand Test 116)
+# Installation: python -m pip install -r requirements.txt
+# Keine Versions-Pins, bis die freigegebenen Versionen getestet wurden.
+requests
+PySide6
+
+yt-dlp
+smbprotocol

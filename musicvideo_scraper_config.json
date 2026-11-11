@@ -1,0 +1,26 @@
+{
+  "Download_Images": true,
+  "MusicVideos": {
+    "TranslateMissingTexts": true,
+    "UseLastFM": true,
+    "Image_Thumb": true,
+    "UseMusicBrainz": false,
+    "MatchThreshold": 0.8,
+    "UseAlbumDescriptionFallback": true,
+    "Image_Poster": true,
+    "Image_Fanart": true,
+    "Image_Banner": true,
+    "Image_ClearLogo": true,
+    "Image_ClearArt": true,
+    "Image_Landscape": true,
+    "Image_Disc": true,
+    "Image_Keyart": true,
+    "MusicBrainzUserAgent": "Media-Buddy/2.0 (https://buddytools.de/media-buddy/)",
+    "ResolveArtistMBID": true,
+    "UseFanartTV": true
+  },
+  "Overwrite": {
+    "NFO": false,
+    "Artwork": false
+  }
+}

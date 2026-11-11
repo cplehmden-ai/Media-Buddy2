@@ -1,0 +1,79 @@
+MEDIA-BUDDY V2 - VORAUSSETZUNGEN / PYTHON-MODULE
+Stand: Test 116 (26.10.2026)
+
+1. PYTHON
+   Python 3.12 wird fuer die aktuelle Windows-Entwicklungsumgebung verwendet.
+   Die Kompatibilitaet weiterer Versionen ist noch nicht vollstaendig geprueft.
+   Die folgenden Befehle im Media-Buddy-V2-Projektordner ausfuehren:
+
+     where python
+     python --version
+     python -m pip --version
+     python -m pip install -r requirements.txt
+
+   Unter Windows bei mehreren Installationen ggf. den Python Launcher nutzen:
+     py -3.12 -m pip install -r requirements.txt
+     py -3.12 Media_Buddy.py
+
+   Wichtig: "pip" allein kann zur falschen Python-Installation gehoeren.
+   Daher immer "python -m pip" mit demselben Interpreter verwenden,
+   mit dem Media-Buddy gestartet wird.
+
+2. PYTHON-PAKETE (NICHT IN DER STANDARDBIBLIOTHEK)
+
+   Erforderlich fuer die jeweiligen Programmteile:
+   - requests: Serien-, Film- und Musikvideo-Scraper, Uebersetzung,
+               Kapitel-Download (bereits beim Import benoetigt).
+   - PySide6:  Grafische Benutzeroberflaeche (Qt).
+
+   Optional je nach verwendeter Funktion:
+   - yt-dlp:      Trailer-Download im Film-Scraper.
+   - smbprotocol: stellt das Python-Modul "smbclient" bereit;
+                  SMB/UNC-Zugriff im Film-Scraper.
+
+   Optional installieren:
+     python -m pip install yt-dlp smbprotocol
+
+3. EXTERNE PROGRAMME (KEINE PIP-MODULE)
+
+   Je nach Funktion werden FFmpeg und ffprobe, MKVToolNix sowie ggf.
+   weitere konfigurierte externe Werkzeuge benoetigt. Diese sind separat
+   zu installieren und ihre Pfade in der Media-Buddy-Konfiguration zu setzen.
+   Der konkrete Umfang der externen Tools wird vor der Veroeffentlichung
+   anhand der jeweils aktivierten Funktionen vervollstaendigt.
+
+4. BEKANNTE PAKETLUECKE IM AKTUELLEN TEST-116-ZIP
+
+   musicvideo_scraper.py importiert die PROJEKTEIGENE Datei
+   musicbrainz_artist_resolver.py (Klasse ArtistMBIDResolver).
+   Diese Datei fehlt im aktuellen Test-116-ZIP. Sie ist KEIN Paket,
+   das sich mit "pip install musicbrainz_artist_resolver" beheben laesst.
+   Vor einem vollstaendigen Musikvideo-Test oder einer Veroeffentlichung
+   muss das fehlende Projektmodul aus dem funktionierenden Stand
+   uebernommen werden.
+
+5. FEHLERSUCHE BEI MODULE NOT FOUND
+
+   Interpreter pruefen:
+     python -c "import sys; print(sys.executable)"
+
+   Installierte Pakete pruefen:
+     python -m pip list
+     python -m pip check
+
+   Beispiel:
+     python -c "import requests; print(requests.__version__)"
+     python -c "import PySide6; print(PySide6.__version__)"
+
+   Bei Headless-Aufrufen in V1 die Standardfehlerausgabe in das
+   vorhandene Log aufnehmen, damit Importfehler sichtbar werden.
+   Ein Abhaengigkeits-Preflight vor dem Scraperstart ist als
+   zusaetzliche Verbesserung fuer spaetere Tests sinnvoll.
+
+6. PFLEGE
+
+   Bei jeder neuen externen Python-Abhaengigkeit BEIDE Dateien pflegen:
+   requirements.txt (installierbare Pakete) und VORAUSSETZUNGEN.txt
+   (Pflicht/optional, Zweck, externe Programme, Besonderheiten).
+   Vor einer oeffentlichen Testversion Paketinhalt, Python-Versionen,
+   Installationsanleitung und Versionsgrenzen erneut pruefen.
