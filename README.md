@@ -60,7 +60,7 @@ Install the following applications separately and configure their executable pat
 
 - **Jellyfin FFmpeg 8 or newer** is recommended for the best compatibility with Media-Buddy's video-processing features.
 - Use **regular, directly accessible installations** of the external command-line tools. **Flatpak-packaged tools are not supported**, because Media-Buddy needs to invoke their executables directly. In particular, make sure MKVToolNix is installed as a regular system application rather than relying on a Flatpak installation.
-- **ImageMagick 7 or newer is required**; the older ImageMagick 6 commonly found in Linux distributions is not sufficient.
+- **ImageMagick 7 or newer is required**; the older ImageMagick 6 commonly found in Linux distributions is not sufficient. You now can use an AppImage version of ImageMagick. If you put it into the /Tools subdirectory it will be diesoveresd automatically.
 
 The tools are not included in this source repository and may be installed in different locations on different systems.
 

@@ -6,10 +6,12 @@ from postprocess_save_guard import can_autosave, report_save_failure
 from postprocess_entry import make_entry
 import os
 import random
+import subprocess
+import threading
 import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from PySide6.QtCore import Qt, QSettings, QUrl, QEvent, QTimer
+from PySide6.QtCore import Qt, QSettings, QUrl, QEvent, QTimer, QThread, Signal
 from PySide6.QtGui import QDesktopServices, QPixmap, QPainter
 from PySide6.QtWidgets import (QWidget,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,
     QFileDialog,QListWidget,QLineEdit,QTextEdit,QStackedWidget,QMessageBox,QSplitter,
@@ -84,11 +86,77 @@ class FixedArt(QWidget):
             painter.drawText(self.rect(), Qt.AlignmentFlag.AlignCenter, 'Keine Grafik vorhanden')
         painter.end()
 
+class _ArtFrameWorker(QThread):
+    """Extract frames off the GUI thread; QPixmap stays on the GUI thread."""
+    metadata_ready = Signal(object)
+    frame_ready = Signal(int, str)
+    extraction_error = Signal(str)
+
+    def __init__(self, video, folder, parent=None):
+        super().__init__(parent)
+        self.video = video
+        self.folder = folder
+        self._process_lock = threading.Lock()
+        self._process = None
+
+    def stop(self):
+        """Request cancellation and interrupt the active FFmpeg child, if any."""
+        self.requestInterruption()
+        with self._process_lock:
+            process = self._process
+            if process is not None and process.poll() is None:
+                process.terminate()
+
+    def _extract(self, args):
+        """Run FFmpeg with a process handle accessible to the cancelling GUI."""
+        with self._process_lock:
+            if self.isInterruptionRequested():
+                return
+            process = subprocess.Popen(
+                [str(arg) for arg in args], stdin=subprocess.DEVNULL,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            self._process = process
+        try:
+            _, stderr = process.communicate()
+            if self.isInterruptionRequested():
+                return
+            if process.returncode:
+                raise RuntimeError(stderr.decode("utf-8", errors="replace")[-1200:])
+        finally:
+            with self._process_lock:
+                if self._process is process:
+                    self._process = None
+
+    def run(self):
+        try:
+            info = metadata(self.video)
+            if self.isInterruptionRequested():
+                return
+            self.metadata_ready.emit(info)
+            ffmpeg = tool('ffmpeg')
+            for i in range(16):
+                if self.isInterruptionRequested():
+                    return
+                path = Path(self.folder) / f'shot_{i:02d}.jpg'
+                timestamp = info['duration'] * (i + 1) / 17
+                self._extract([ffmpeg, '-hide_banner', '-loglevel', 'error',
+                     '-ss', f'{timestamp:.3f}', '-i', self.video,
+                     '-frames:v', '1', '-q:v', '3', '-y', path])
+                if self.isInterruptionRequested():
+                    return
+                self.frame_ready.emit(i, str(path))
+        except Exception as exc:
+            if not self.isInterruptionRequested():
+                self.extraction_error.emit(str(exc))
+
+
 class ArtPicker(QDialog):
     def __init__(self,video,kind,parent=None):
         super().__init__(parent);self.video=video;self.kind=kind;self.work=tempfile.TemporaryDirectory(prefix='mb162_picker_')
-        self.shots=[];self.checks=[];self.meta=None
+        self.shots=[None]*16;self.checks=[];self.meta=None;self._ready_count=0
         self._poster_count = 1
+        self._closing = False
+        self._cleaned = False
         self.setWindowTitle(_('Select frames for {artwork}').format(artwork=_('Poster') if kind=='poster' else _('Fanart')))
         self.resize(1100,770)
         main=QVBoxLayout(self);scroll=QScrollArea();scroll.setWidgetResizable(True)
@@ -128,11 +196,14 @@ class ArtPicker(QDialog):
             controls.addWidget(QLabel(_('Collage: select none or 2–6 images')),1)
         main.addLayout(controls)
         buttons=QHBoxLayout();self.status=QLabel(_('Generating frames …'));buttons.addWidget(self.status,1)
-        make=QPushButton(_('Generate artwork'));make.clicked.connect(self.create);buttons.addWidget(make)
+        make=QPushButton(_('Generate artwork'));make.setEnabled(False);self.make_button=make;make.clicked.connect(self.create);buttons.addWidget(make)
         back=QPushButton(_('Back'));back.clicked.connect(self.reject);buttons.addWidget(back);main.addLayout(buttons)
         # 16 stills are extracted once per picker; this may take some time.
-        from PySide6.QtCore import QTimer
-        QTimer.singleShot(0,self.extract)
+        self._worker = _ArtFrameWorker(self.video, self.work.name, self)
+        self._worker.metadata_ready.connect(self._on_metadata)
+        self._worker.frame_ready.connect(self._on_frame)
+        self._worker.extraction_error.connect(self._on_extraction_error)
+        QTimer.singleShot(0, self._worker.start)
     def _poster_controls(self):
         if self.kind != 'poster':
             return
@@ -150,35 +221,48 @@ class ArtPicker(QDialog):
         for i, box in enumerate(self.preview_boxes):
             self.preview_grid.addWidget(box, i // columns, i % columns)
 
-    def extract(self):
-        try:
-            self.meta=metadata(self.video)
-            portrait = self.meta['height'] > self.meta['width']
-            self._arrange_previews(portrait)
-            if self.kind == 'poster':
-                configured = QSettings('BuddyTools', 'Media-Buddy-V2').value(
-                    'metadata/other_videos/poster_count', 0)
-                try:
-                    # QComboBox settings store the zero-based selection index.
-                    configured_count = int(configured) + 1
-                except (TypeError, ValueError):
-                    configured_count = 1
-                self._poster_count = 2 if portrait else max(1, min(2, configured_count))
-                self._poster_controls()
-            for i in range(16):
-                path=Path(self.work.name)/f'shot_{i:02d}.jpg'
-                t=self.meta['duration']*(i+1)/17
-                run([tool('ffmpeg'),'-hide_banner','-loglevel','error','-ss',f'{t:.3f}','-i',self.video,'-frames:v','1','-q:v','3','-y',path])
-                self.shots.append(path)
-                pix=QPixmap(str(path))
-                preview=getattr(self,f'preview_{i}')
-                preview.setPixmap(pix.scaled(preview.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+    def _on_metadata(self, info):
+        if self._closing:
+            return
+        self.meta = info
+        portrait = info['height'] > info['width']
+        self._arrange_previews(portrait)
+        if self.kind == 'poster':
+            configured = QSettings('BuddyTools', 'Media-Buddy-V2').value(
+                'metadata/other_videos/poster_count', 0)
+            try:
+                configured_count = int(configured) + 1
+            except (TypeError, ValueError):
+                configured_count = 1
+            self._poster_count = 2 if portrait else max(1, min(2, configured_count))
+            self._poster_controls()
+
+    def _on_frame(self, index, filename):
+        if self._closing:
+            return
+        path = Path(filename)
+        self.shots[index] = path
+        preview = getattr(self, f'preview_{index}')
+        pix = QPixmap(filename)
+        if not pix.isNull():
+            preview.setPixmap(pix.scaled(preview.size(),
+                Qt.AspectRatioMode.KeepAspectRatio,
+                Qt.TransformationMode.SmoothTransformation))
+        self._ready_count += 1
+        self.status.setText(_('Generating frames …') + f' ({self._ready_count}/16)')
+        if self._ready_count == 16:
             self.status.setText(_('16 frames ready'))
-        except Exception as exc:
-            self.status.setText(_('Could not generate frames'))
-            QMessageBox.warning(self,_('Still images'),str(exc))
+            self.make_button.setEnabled(True)
+
+    def _on_extraction_error(self, message):
+        if self._closing:
+            return
+        print(f"[ERROR] Other-video frame extraction: {message}", flush=True)
+        self.status.setText(_('Could not generate frames'))
+        QMessageBox.warning(self, _('Still images'), message)
+
     def create(self):
-        if len(self.shots)!=16:return
+        if self._ready_count != 16:return
         options=_artwork_options()
         target=self.video.with_name(self.video.stem+('-poster.jpg' if self.kind=='poster' else '-fanart.jpg'))
         try:
@@ -207,8 +291,29 @@ class ArtPicker(QDialog):
                         fanart([self.shots[i] for i in chosen]+[bg],target,work,options,self.meta)
             self.accept()
         except Exception as exc:QMessageBox.warning(self,_('Artwork generation'),str(exc))
-    def closeEvent(self,event):
-        self.work.cleanup();super().closeEvent(event)
+    def _stop_and_cleanup(self):
+        """QDialog.reject/accept do not necessarily call closeEvent.
+
+        Keep the QThread alive until its run() method has returned, including
+        when the user clicks Back or presses Escape in a modal dialog.
+        """
+        if self._cleaned:
+            return
+        self._closing = True
+        self._worker.stop()
+        # QThread must finish before its QObject parent/dialog is destroyed.
+        self._worker.wait()
+        self.work.cleanup()
+        self._cleaned = True
+        print("[INFO] Other-video frame picker closed; worker stopped", flush=True)
+
+    def done(self, result):
+        self._stop_and_cleanup()
+        super().done(result)
+
+    def closeEvent(self, event):
+        self._stop_and_cleanup()
+        super().closeEvent(event)
 
 class OtherVideoPostprocess(QWidget):
     def __init__(self,parent=None):
