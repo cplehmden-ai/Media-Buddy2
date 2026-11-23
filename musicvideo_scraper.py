@@ -22,6 +22,7 @@ from config_manager import ConfigManager, ConfigError
 from api_keys import get_api_key
 from translation_manager import translate_plot
 from musicbrainz_artist_resolver import ArtistMBIDResolver
+from musicbrainz_rate_limit import mb_get
 from artist_metadata import create_artist_nfo
 
 AUDIODB = 'https://www.theaudiodb.com/api/v1/json/'
@@ -129,7 +130,7 @@ def musicbrainz_track(session, artist, title, timeout, threshold=.80, user_agent
         if wait > 0: time.sleep(wait)
         _last_mb_call = time.monotonic()
         try:
-            response = session.get(MUSICBRAINZ, params={'query': query, 'fmt': 'json', 'limit': 25}, headers=headers, timeout=timeout)
+            response = mb_get(session, MUSICBRAINZ, params={'query': query, 'fmt': 'json', 'limit': 25}, headers=headers, timeout=timeout)
             if response.status_code in (401, 403):
                 _mb_disabled = True
                 print(f'[WARN] MusicBrainz HTTP {response.status_code}; disabling MusicBrainz for this run. Check User-Agent/contact and network access.')

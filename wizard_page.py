@@ -133,10 +133,13 @@ class SeriesWorker(QThread):
             from other_video_wizard_runner import run_other_video_wizard
             from recode_controller import run_recode_batch, run_remux_batch, run_audio_normalize_batch
             from append_controller import run_append_batch
+            from music_recode_controller import run_music_recode_batch
+            from music_wizard_runner import run_music_wizard
             from ffmpeg_manager import set_cancel_event
             set_cancel_event(self.immediate_cancel)
             try:
-                runner = {'Spielfilme': run_movie_wizard, 'Musikvideos': run_musicvideo_wizard, 'Sonstige Videos': run_other_video_wizard, 'Recode': run_recode_batch, 'Remux': run_remux_batch, 'Audio-Normalisieren': run_audio_normalize_batch, 'Videos zusammenfügen': run_append_batch}.get(self.settings.get('_wizard_kind'), run_series_wizard)
+                runner = {'Spielfilme': run_movie_wizard, 'Musikvideos': run_musicvideo_wizard, 'Sonstige Videos': run_other_video_wizard, 'Recode': run_recode_batch, 'Remux': run_remux_batch, 'Audio-Normalisieren': run_audio_normalize_batch, 'Videos zusammenfügen': run_append_batch, 'Musik kodieren': run_music_recode_batch, 'Musik-Assistent': run_music_wizard}.get(self.settings.get('_wizard_kind'), run_series_wizard)
+                self.settings['_immediate_cancel_event'] = self.immediate_cancel
                 result = runner(self.settings, lambda *a: self.update.emit(*a),
                                            lambda: self.cancel_after_file,
                                            lambda: self.immediate_cancel.is_set())
@@ -173,7 +176,7 @@ class WizardPage(QWidget):
         root.addWidget(folders)
         self.folders_widget=folders
         actions=QHBoxLayout()
-        if kind in ('Serien', 'Spielfilme', 'Musikvideos', 'Sonstige Videos', 'Recode', 'Remux', 'Audio-Normalisieren', 'Videos zusammenfügen'):
+        if kind in ('Serien', 'Spielfilme', 'Musikvideos', 'Sonstige Videos', 'Recode', 'Remux', 'Audio-Normalisieren', 'Videos zusammenfügen', 'Musik kodieren', 'Musik-Assistent'):
             # No development notes or redundant descriptions on the four media wizards.
             actions.addStretch(1)
         else:
@@ -188,7 +191,7 @@ class WizardPage(QWidget):
         start.setMinimumWidth(145)
         start.setMinimumHeight(38)
         start.setStyleSheet('QPushButton { background:#1769ad; color:white; font-weight:bold; border-radius:5px; padding:7px 18px; } QPushButton:hover { background:#0d568f; }')
-        start.clicked.connect(self.start_wizard if kind in ('Serien','Spielfilme','Musikvideos','Recode','Remux','Audio-Normalisieren','Videos zusammenfügen','Sonstige Videos') else self.not_ready)
+        start.clicked.connect(self.start_wizard if kind in ('Serien','Spielfilme','Musikvideos','Recode','Remux','Audio-Normalisieren','Videos zusammenfügen','Sonstige Videos','Musik kodieren','Musik-Assistent') else self.not_ready)
         self.start_button = start
         actions.addWidget(start)
         self.actions_widget=QWidget()
@@ -556,7 +559,7 @@ class WizardPage(QWidget):
         self._running=True
         activity_event(f"{self.kind}: Verarbeitung gestartet; Quelle={source}; Ziel={target}")
         self._set_navigation_locked(True)
-        self.processing_heading.setText(_('Video transcoding in progress') if self.kind=='Recode' else _('Video remuxing in progress') if self.kind=='Remux' else _('Audio normalization running') if self.kind=='Audio-Normalisieren' else _('Joining videos') if self.kind=='Videos zusammenfügen' else _('Processing music videos') if self.kind=='Musikvideos' else _('Processing movies') if self.kind=='Spielfilme' else _('Processing other videos') if self.kind=='Sonstige Videos' else _('TV series processing in progress'))
+        self.processing_heading.setText(_('Video transcoding in progress') if self.kind=='Recode' else _('Video remuxing in progress') if self.kind=='Remux' else _('Audio normalization running') if self.kind=='Audio-Normalisieren' else _('Joining videos') if self.kind=='Videos zusammenfügen' else _('Processing music videos') if self.kind=='Musikvideos' else _('Processing movies') if self.kind=='Spielfilme' else _('Processing other videos') if self.kind=='Sonstige Videos' else _('Music processing in progress') if self.kind == 'Musik-Assistent' else _('Music encoding in progress') if self.kind == 'Musik kodieren' else _('TV series processing in progress'))
         self._phase='video'
         self._current_index=0
         self._total_files=1
@@ -644,22 +647,27 @@ class WizardPage(QWidget):
     def on_worker_update(self, kind, value, index, total):
         window = self.window()
         if hasattr(window, "set_work_status"):
-            window.set_work_status(kind, value, index, total)
+            if kind == 'scraper_start':
+                window.set_work_status('phase', _('Processing metadata: Music'))
+            elif kind == 'scraper_log':
+                window.set_work_status('log', value)
+            elif kind not in ('scraper_progress',):
+                window.set_work_status(kind, value, index, total)
         total=max(1,int(total))
         if kind=='file':
             self._phase='video'
             self._current_index=index
             self._total_files=total
-            self.progress_status.setText(_('Video {index} of {total}: {filename}').format(index=index, total=total, filename=value))
+            self.progress_status.setText((_('Audio {index} of {total}: {filename}') if self.kind in ('Musik kodieren','Musik-Assistent') else _('Video {index} of {total}: {filename}')).format(index=index, total=total, filename=value))
             self.current_progress.setValue(0)
-            self.overall_progress.setValue(round((100 if self.kind in ('Recode','Remux','Audio-Normalisieren','Videos zusammenfügen') else 90)*(index-1)/total))
+            self.overall_progress.setValue(round((100 if self.kind in ('Recode','Remux','Audio-Normalisieren','Videos zusammenfügen','Musik kodieren') else 90)*(index-1)/total))
         elif kind=='progress' and isinstance(value,dict):
             try:
                 pct=float(value.get('percent',value.get('percentage',0)))
                 pct=max(0,min(100,pct))
                 self.current_progress.setValue(round(pct))
                 if self._phase=='video':
-                    self.overall_progress.setValue(round((100 if self.kind in ('Recode','Remux','Audio-Normalisieren','Videos zusammenfügen') else 90)*((self._current_index-1)+pct/100)/self._total_files))
+                    self.overall_progress.setValue(round((100 if self.kind in ('Recode','Remux','Audio-Normalisieren','Videos zusammenfügen','Musik kodieren') else 90)*((self._current_index-1)+pct/100)/self._total_files))
             except (ValueError,TypeError):
                 pass
         elif kind=='phase':
@@ -668,6 +676,14 @@ class WizardPage(QWidget):
             self.progress_status.setText(stage_label(str(value)))
             self.current_progress.setValue(0)
             self.overall_progress.setValue(90 if 'Scraper' in str(value) else 95)
+        elif kind=='scraper_start':
+            self._phase='Scraper'
+            self.progress_status.setText(_('Processing metadata: Music'))
+            self.current_progress.setRange(0, 0)
+            self.overall_progress.setValue(90)
+        elif kind=='scraper_log':
+            # Meaningful scraper events are displayed without inventing progress.
+            self.progress_status.setText(str(value)[:220])
         elif kind=='scraper_progress' and isinstance(value, dict):
             stage = str(value.get('stage') or 'Scraper')
             filename = value.get('file')
@@ -675,12 +691,10 @@ class WizardPage(QWidget):
             prefix = f'{i}/{n} – ' if isinstance(i, int) and isinstance(n, int) and n else ''
             self.progress_status.setText(f'{prefix}{filename + " – " if filename else ""}{stage_label(stage)}')
             pct = value.get('percent')
-            if pct is None:
-                # An unknown network operation has no invented percentage.
-                self.current_progress.setRange(0, 0)
-            else:
-                self.current_progress.setRange(0, 100)
-                self.current_progress.setValue(round(max(0, min(100, float(pct)))))
+            if self.kind=='Musik-Assistent' and pct is not None:
+                self.overall_progress.setValue(round(90 + 10*max(0,min(100,float(pct)))/100))
+            # Per-track metadata/API duration cannot be estimated reliably.
+            self.current_progress.setRange(0, 0)
             if isinstance(i, int) and isinstance(n, int) and n:
                 self.overall_progress.setValue(round(90 + 9 * max(0, i-1)/n))
         elif kind=='phase_progress':
@@ -733,6 +747,11 @@ class WizardPage(QWidget):
                        f"{_('Attachment errors:')} {result.get('attachment_errors', 0)}\n"
                        f"{_('Scraper return code:')} {result.get('scraper_rc', '–')}\n"
                        f"{_('Log file:')} {result.get('log_file', _('not available'))}")
+        if self.kind in ('Musik kodieren','Musik-Assistent'):
+            title = (_('Music encoding failed') if fatal else _('Music encoding cancelled') if aborted else _('Music encoding completed with errors') if errors else _('Music encoding completed'))
+            summary = (f"{_('Processed:')} {result.get('processed', 0)}\n"
+                       f"{_('Skipped:')} {result.get('skipped', 0)}\n"
+                       f"{_('Processing errors:')} {result.get('failed', 0)}") if not fatal else f"{_('Processing failed:')} {fatal}"
         if self.kind=='Sonstige Videos' and not fatal:
             title = (_('Other videos: cancelled') if aborted else
                      _('Other videos: completed with errors') if errors else

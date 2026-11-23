@@ -1,19 +1,8 @@
-# Local credentials and build artifacts
-api_key_vault.py
-mb_core.py
-api_key_vault*.pyd
-api_key_vault*.so
-vault_build/
-*.build/
-*.dist/
 __pycache__/
 *.py[cod]
 .venv/
 venv/
-.pytest_cache/
 *.log
 *.zip
-Media-Buddy.json
-recode-mission.json
-.env
-.env.*
+api_key_vault.py
+vault_build/

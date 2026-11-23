@@ -245,7 +245,7 @@ class ArtworkPreview(QFrame):
     def choose(self):
         if not self.folder:
             return
-        src, _ = QFileDialog.getOpenFileName(self, _('Select artwork'), '', 'Bilder (*.jpg *.jpeg *.png *.webp *.avif *.bmp)')
+        src, selected_filter = QFileDialog.getOpenFileName(self, _('Select artwork'), '', 'Bilder (*.jpg *.jpeg *.png *.webp *.avif *.bmp)')
         if not src:
             return
         dest = self.folder / self.filename

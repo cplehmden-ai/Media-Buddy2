@@ -12,7 +12,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from PySide6.QtCore import Qt, QSettings, QUrl, QEvent, QTimer, QThread, Signal
-from PySide6.QtGui import QDesktopServices, QPixmap, QPainter
+from PySide6.QtGui import QDesktopServices, QPixmap, QPainter, QImageReader
 from PySide6.QtWidgets import (QWidget,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,
     QFileDialog,QListWidget,QLineEdit,QTextEdit,QStackedWidget,QMessageBox,QSplitter,
     QDialog,QComboBox,QCheckBox,QScrollArea,QSizePolicy)
@@ -73,6 +73,17 @@ class FixedArt(QWidget):
     def set_file(self, path):
         self.original = QPixmap(str(path)) if path.exists() else QPixmap()
         self.update()
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.MouseButton.LeftButton:
+            editor = self.parent()
+            while editor is not None and not isinstance(editor, OtherVideoPostprocess):
+                editor = editor.parent()
+            if editor is not None:
+                editor.choose_artwork('poster' if self is editor.poster else 'fanart')
+                event.accept()
+                return
+        super().mousePressEvent(event)
 
     # Artwork geometry is controlled by the parent editor.  Never change the
     # height here: doing so made the poster cover its controls in small windows.
@@ -461,6 +472,25 @@ class OtherVideoPostprocess(QWidget):
         if self.current:
             self.fanart.set_file(self.current.with_name(self.current.stem+'-fanart.jpg'))
             self.poster.set_file(self.current.with_name(self.current.stem+'-poster.jpg'))
+    def choose_artwork(self, kind):
+        """Replace the clicked artwork with a locally selected image."""
+        if self.current is None:
+            return
+        src, selected_filter = QFileDialog.getOpenFileName(
+            self, _('Select artwork'), '',
+            'Bilder (*.jpg *.jpeg *.png *.webp *.avif *.bmp)')
+        if not src:
+            return
+        image = QImageReader(src).read()
+        if image.isNull():
+            QMessageBox.warning(self, _('Artwork'), _('Could not read the image.'))
+            return
+        destination = self.current.with_name(self.current.stem + '-' + kind + '.jpg')
+        if not image.save(str(destination), 'JPG'):
+            QMessageBox.warning(self, _('Artwork'), _('Save failed.'))
+            return
+        self.refresh_art()
+
     def save_current(self):
         if self.tree is None or self.current is None:return True
         root=self.tree.getroot()

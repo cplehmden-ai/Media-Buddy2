@@ -1,12 +1,18 @@
+
 msgid ""
 msgstr ""
 "Project-Id-Version: Media-Buddy V2 Test 179\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-11-10 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: wizard_page.py:444
 msgid "0 = do not keep tracks of this type. Default language is set above."
@@ -117,7 +123,8 @@ msgstr "Always encode when bitrate is 0"
 msgid "Apply to all"
 msgstr "Apply to all"
 
-#: musicvideo_postprocess.py:33 musicvideo_postprocess.py:508 musicvideo_postprocess.py:521
+#: musicvideo_postprocess.py:33 musicvideo_postprocess.py:508
+#: musicvideo_postprocess.py:521
 msgid "Artist"
 msgstr "Artist"
 
@@ -137,7 +144,8 @@ msgstr "Artist post-processing"
 msgid "Artists (separate multiple with ;)"
 msgstr "Artists (separate multiple with ;)"
 
-#: musicvideo_postprocess.py:141 musicvideo_postprocess.py:144 series_postprocess.py:255 series_postprocess.py:258
+#: musicvideo_postprocess.py:141 musicvideo_postprocess.py:144
+#: series_postprocess.py:255 series_postprocess.py:258
 msgid "Artwork"
 msgstr "Artwork"
 
@@ -235,7 +243,9 @@ msgstr "Automatically reduce quality level when needed"
 msgid "Autosave skipped: folder no longer exists: {folder}"
 msgstr "Autosave skipped: folder no longer exists: {folder}"
 
-#: movie_postprocess.py:213 musicvideo_postprocess.py:577 other_video_postprocess.py:132 other_video_postprocess.py:267 series_postprocess.py:330 series_postprocess.py:560
+#: movie_postprocess.py:213 musicvideo_postprocess.py:577
+#: other_video_postprocess.py:132 other_video_postprocess.py:267
+#: series_postprocess.py:330 series_postprocess.py:560
 msgid "Back"
 msgstr "Back"
 
@@ -259,7 +269,9 @@ msgstr "Backgrounds and borders"
 msgid "Balanced"
 msgstr "Balanced"
 
-#: metadata_page.py:144 metadata_page.py:150 metadata_page.py:156 movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:38 series_postprocess.py:55 wizard_page.py:312
+#: metadata_page.py:144 metadata_page.py:150 metadata_page.py:156
+#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:38
+#: series_postprocess.py:55 wizard_page.py:312
 msgid "Banner"
 msgstr "Banner"
 
@@ -283,7 +295,8 @@ msgstr "Born"
 msgid "Both file extension lists must contain entries."
 msgstr "Both file extension lists must contain entries."
 
-#: global_settings_page.py:255 metadata_page.py:114 other_video_page.py:43 postprocess_entry.py:17 wizard_page.py:170
+#: global_settings_page.py:255 metadata_page.py:114 other_video_page.py:43
+#: postprocess_entry.py:17 wizard_page.py:170
 msgid "Browse …"
 msgstr "Browse …"
 
@@ -295,7 +308,8 @@ msgstr "Cancel"
 msgid "Cancel action"
 msgstr "Cancel action"
 
-#: metadata_runtime_ui.py:49 wizard_page.py:224 wizard_page.py:573 wizard_page.py:590
+#: metadata_runtime_ui.py:49 wizard_page.py:224 wizard_page.py:573
+#: wizard_page.py:590
 msgid "Cancel after current file"
 msgstr "Cancel after current file"
 
@@ -303,7 +317,7 @@ msgstr "Cancel after current file"
 msgid "Cancel immediately"
 msgstr "Cancel immediately"
 
-#: video_test_page.py:106 video_test_page.py:35
+#: video_test_page.py:35 video_test_page.py:106
 msgid "Cancel test"
 msgstr "Cancel test"
 
@@ -347,15 +361,18 @@ msgstr "Check tools"
 msgid "Choose file"
 msgstr "Choose file"
 
-#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:39 series_postprocess.py:56
+#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:39
+#: series_postprocess.py:56
 msgid "Clearart"
 msgstr "Clearart"
 
-#: metadata_page.py:146 metadata_page.py:152 metadata_page.py:158 wizard_page.py:312
+#: metadata_page.py:146 metadata_page.py:152 metadata_page.py:158
+#: wizard_page.py:312
 msgid "Clearart / Logo"
 msgstr "Clearart / Logo"
 
-#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:39 series_postprocess.py:57
+#: movie_postprocess.py:18 movie_postprocess.py:19 musicvideo_postprocess.py:39
+#: series_postprocess.py:57
 msgid "Clearlogo"
 msgstr "Clearlogo"
 
@@ -453,8 +470,12 @@ msgstr "Could not read source frame."
 
 #: Media_Buddy.py:540
 #, python-brace-format
-msgid "Could not read the deletion list:\n{exc}"
-msgstr "Could not read the deletion list:\n{exc}"
+msgid ""
+"Could not read the deletion list:\n"
+"{exc}"
+msgstr ""
+"Could not read the deletion list:\n"
+"{exc}"
 
 #: series_postprocess.py:717
 #, python-brace-format
@@ -502,7 +523,9 @@ msgstr "Could not start player"
 msgid "Country"
 msgstr "Country"
 
-#: musicvideo_postprocess.py:40 musicvideo_postprocess.py:425 musicvideo_postprocess.py:429 musicvideo_postprocess.py:449 musicvideo_postprocess.py:453
+#: musicvideo_postprocess.py:40 musicvideo_postprocess.py:425
+#: musicvideo_postprocess.py:429 musicvideo_postprocess.py:449
+#: musicvideo_postprocess.py:453
 msgid "Cover"
 msgstr "Cover"
 
@@ -596,15 +619,27 @@ msgstr "Delete selected rule"
 
 #: Media_Buddy.py:560
 #, python-brace-format
-msgid "Deleted: {deleted}\nAlready removed: {missing}\nNot deleted: {errors}"
-msgstr "Deleted: {deleted}\nAlready removed: {missing}\nNot deleted: {errors}"
+msgid ""
+"Deleted: {deleted}\n"
+"Already removed: {missing}\n"
+"Not deleted: {errors}"
+msgstr ""
+"Deleted: {deleted}\n"
+"Already removed: {missing}\n"
+"Not deleted: {errors}"
 
 #: Media_Buddy.py:557
 #, python-brace-format
-msgid "Deletion failed:\n{exc}"
-msgstr "Deletion failed:\n{exc}"
+msgid ""
+"Deletion failed:\n"
+"{exc}"
+msgstr ""
+"Deletion failed:\n"
+"{exc}"
 
-#: movie_postprocess.py:251 musicvideo_postprocess.py:557 other_video_postprocess.py:246 series_postprocess.py:323 series_postprocess.py:539
+#: movie_postprocess.py:251 musicvideo_postprocess.py:557
+#: other_video_postprocess.py:246 series_postprocess.py:323
+#: series_postprocess.py:539
 msgid "Description"
 msgstr "Description"
 
@@ -670,8 +705,12 @@ msgid "Dynamic range compression"
 msgstr "Dynamic range compression"
 
 #: global_settings_page.py:348
-msgid "Each mapping rule needs a target certification and at least one source pattern."
-msgstr "Each mapping rule needs a target certification and at least one source pattern."
+msgid ""
+"Each mapping rule needs a target certification and at least one source "
+"pattern."
+msgstr ""
+"Each mapping rule needs a target certification and at least one source "
+"pattern."
 
 #: musicvideo_postprocess.py:575
 msgid "Edit artist"
@@ -784,11 +823,16 @@ msgstr "FFmpeg could not generate a still image: "
 msgid "Fallback audio codec"
 msgstr "Fallback audio codec"
 
-#: movie_postprocess.py:18 movie_postprocess.py:19 movie_postprocess.py:206 musicvideo_postprocess.py:38 musicvideo_postprocess.py:40 musicvideo_postprocess.py:561 other_video_page.py:93 other_video_postprocess.py:199 other_video_postprocess.py:92 series_postprocess.py:55
+#: movie_postprocess.py:18 movie_postprocess.py:19 movie_postprocess.py:206
+#: musicvideo_postprocess.py:38 musicvideo_postprocess.py:40
+#: musicvideo_postprocess.py:561 other_video_page.py:93
+#: other_video_postprocess.py:92 other_video_postprocess.py:199
+#: series_postprocess.py:55
 msgid "Fanart"
 msgstr "Fanart"
 
-#: metadata_page.py:143 metadata_page.py:149 metadata_page.py:155 wizard_page.py:312
+#: metadata_page.py:143 metadata_page.py:149 metadata_page.py:155
+#: wizard_page.py:312
 msgid "Fanart / Background"
 msgstr "Fanart / Background"
 
@@ -848,8 +892,12 @@ msgid "Finished with error (RC={code})"
 msgstr "Finished with error (RC={code})"
 
 #: global_settings_page.py:296
-msgid "First matching rule wins. * wildcards are supported; separate multiple patterns with semicolons."
-msgstr "First matching rule wins. * wildcards are supported; separate multiple patterns with semicolons."
+msgid ""
+"First matching rule wins. * wildcards are supported; separate multiple "
+"patterns with semicolons."
+msgstr ""
+"First matching rule wins. * wildcards are supported; separate multiple "
+"patterns with semicolons."
 
 #: other_video_page.py:40
 msgid "Folder containing finished videos"
@@ -879,7 +927,8 @@ msgstr "Foreground 2:"
 msgid "Founded"
 msgstr "Founded"
 
-#: other_video_postprocess.py:101 other_video_postprocess.py:117 other_video_postprocess.py:121
+#: other_video_postprocess.py:101 other_video_postprocess.py:117
+#: other_video_postprocess.py:121
 #, python-brace-format
 msgid "Frame #{number:02d}"
 msgstr "Frame #{number:02d}"
@@ -920,7 +969,9 @@ msgstr "Generating 16 frames with FFmpeg …"
 msgid "Generating frames …"
 msgstr "Generating frames …"
 
-#: movie_postprocess.py:17 movie_postprocess.py:236 musicvideo_postprocess.py:31 musicvideo_postprocess.py:37 other_video_postprocess.py:43 series_postprocess.py:51
+#: movie_postprocess.py:17 movie_postprocess.py:236 musicvideo_postprocess.py:31
+#: musicvideo_postprocess.py:37 other_video_postprocess.py:43
+#: series_postprocess.py:51
 msgid "Genre"
 msgstr "Genre"
 
@@ -968,7 +1019,8 @@ msgstr "Horizontal"
 msgid "Identify music video"
 msgstr "Identify music video"
 
-#: Media_Buddy.py:272 Media_Buddy.py:275 Media_Buddy.py:385 Media_Buddy.py:506 metadata_page.py:203 metadata_runtime_ui.py:131 other_video_page.py:130
+#: Media_Buddy.py:272 Media_Buddy.py:275 Media_Buddy.py:385 Media_Buddy.py:506
+#: metadata_page.py:203 metadata_runtime_ui.py:131 other_video_page.py:130
 msgid "Idle"
 msgstr "Idle"
 
@@ -1007,8 +1059,12 @@ msgstr "Invalid date, existing value preserved: {exc}"
 
 #: wizard_page.py:494
 #, python-brace-format
-msgid "Invalid language code on row {row}: {code!r}. Use three-letter ISO language codes."
-msgstr "Invalid language code on row {row}: {code!r}. Use three-letter ISO language codes."
+msgid ""
+"Invalid language code on row {row}: {code!r}. Use three-letter ISO language "
+"codes."
+msgstr ""
+"Invalid language code on row {row}: {code!r}. Use three-letter ISO language "
+"codes."
 
 #: global_settings_page.py:409
 msgid "Invalid or duplicate protected audio formats. Allowed: "
@@ -1104,12 +1160,20 @@ msgid "Media folder"
 msgstr "Media folder"
 
 #: Media_Buddy.py:583
-msgid "Media-Buddy V2 organizes, converts and prepares movies, TV series, music videos and other videos for media libraries such as Kodi."
-msgstr "Media-Buddy V2 organizes, converts and prepares movies, TV series, music videos and other videos for media libraries such as Kodi."
+msgid ""
+"Media-Buddy V2 organizes, converts and prepares movies, TV series, music "
+"videos and other videos for media libraries such as Kodi."
+msgstr ""
+"Media-Buddy V2 organizes, converts and prepares movies, TV series, music "
+"videos and other videos for media libraries such as Kodi."
 
 #: Media_Buddy.py:639
-msgid "Media-Buddy cannot be closed during processing. Please request cancellation after the current file first."
-msgstr "Media-Buddy cannot be closed during processing. Please request cancellation after the current file first."
+msgid ""
+"Media-Buddy cannot be closed during processing. Please request cancellation "
+"after the current file first."
+msgstr ""
+"Media-Buddy cannot be closed during processing. Please request cancellation "
+"after the current file first."
 
 #: gui_i18n.py:55 movie_postprocess.py:206
 msgid "Metadata"
@@ -1157,8 +1221,12 @@ msgid "Movie collection"
 msgstr "Movie collection"
 
 #: movie_postprocess.py:289
-msgid "Movie collection artwork over SMB is currently unavailable in the editor on Linux."
-msgstr "Movie collection artwork over SMB is currently unavailable in the editor on Linux."
+msgid ""
+"Movie collection artwork over SMB is currently unavailable in the editor on "
+"Linux."
+msgstr ""
+"Movie collection artwork over SMB is currently unavailable in the editor on "
+"Linux."
 
 #: movie_postprocess.py:290
 #, python-brace-format
@@ -1218,7 +1286,8 @@ msgstr "Music video scraper"
 msgid "Music video thumbnail"
 msgstr "Music video thumbnail"
 
-#: gui_i18n.py:71 musicvideo_postprocess.py:624 musicvideo_postprocess.py:631 musicvideo_postprocess.py:641 musicvideo_postprocess.py:664
+#: gui_i18n.py:71 musicvideo_postprocess.py:624 musicvideo_postprocess.py:631
+#: musicvideo_postprocess.py:641 musicvideo_postprocess.py:664
 msgid "Music videos"
 msgstr "Music videos"
 
@@ -1254,7 +1323,7 @@ msgstr "Negative season number"
 msgid "Next video in {seconds:.1f} s"
 msgstr "Next video in {seconds:.1f} s"
 
-#: video_test_page.py:245 video_test_page.py:28
+#: video_test_page.py:28 video_test_page.py:245
 msgid "Next video:"
 msgstr "Next video:"
 
@@ -1424,14 +1493,29 @@ msgstr "Permanently delete original files"
 
 #: Media_Buddy.py:547
 #, python-brace-format
-msgid "Permanently delete {value} original file(s) from the last run?\n\nThe files will not be moved to the Recycle Bin.\nCheck all processing results first.\n\nThis action cannot be undone."
-msgstr "Permanently delete {value} original file(s) from the last run?\n\nThe files will not be moved to the Recycle Bin.\nCheck all processing results first.\n\nThis action cannot be undone."
+msgid ""
+"Permanently delete {value} original file(s) from the last run?\n"
+"\n"
+"The files will not be moved to the Recycle Bin.\n"
+"Check all processing results first.\n"
+"\n"
+"This action cannot be undone."
+msgstr ""
+"Permanently delete {value} original file(s) from the last run?\n"
+"\n"
+"The files will not be moved to the Recycle Bin.\n"
+"Check all processing results first.\n"
+"\n"
+"This action cannot be undone."
 
 #: movie_postprocess.py:459
 msgid "Placeholder files cannot be played."
 msgstr "Placeholder files cannot be played."
 
-#: movie_postprocess.py:212 movie_postprocess.py:459 movie_postprocess.py:464 musicvideo_postprocess.py:576 musicvideo_postprocess.py:683 other_video_postprocess.py:266 other_video_postprocess.py:409 series_postprocess.py:558 series_postprocess.py:803 series_postprocess.py:807
+#: movie_postprocess.py:212 movie_postprocess.py:459 movie_postprocess.py:464
+#: musicvideo_postprocess.py:576 musicvideo_postprocess.py:683
+#: other_video_postprocess.py:266 other_video_postprocess.py:409
+#: series_postprocess.py:558 series_postprocess.py:803 series_postprocess.py:807
 msgid "Play"
 msgstr "Play"
 
@@ -1480,7 +1564,8 @@ msgstr "Please select either no images or 2 to 6 collage images."
 msgid "Post-process"
 msgstr "Post-process"
 
-#: Media_Buddy.py:315 Media_Buddy.py:326 Media_Buddy.py:338 wizard_page.py:791 wizard_page.py:798 wizard_page.py:806
+#: Media_Buddy.py:315 Media_Buddy.py:326 Media_Buddy.py:338 wizard_page.py:791
+#: wizard_page.py:798 wizard_page.py:806
 msgid "Post-processing"
 msgstr "Post-processing"
 
@@ -1508,11 +1593,15 @@ msgstr "Post-processing: Video test"
 msgid "Post-processing: Videos"
 msgstr "Post-processing: Videos"
 
-#: movie_postprocess.py:18 movie_postprocess.py:19 movie_postprocess.py:201 musicvideo_postprocess.py:38 other_video_page.py:93 other_video_postprocess.py:193 other_video_postprocess.py:92 series_postprocess.py:56
+#: movie_postprocess.py:18 movie_postprocess.py:19 movie_postprocess.py:201
+#: musicvideo_postprocess.py:38 other_video_page.py:93
+#: other_video_postprocess.py:92 other_video_postprocess.py:193
+#: series_postprocess.py:56
 msgid "Poster"
 msgstr "Poster"
 
-#: metadata_page.py:145 metadata_page.py:151 metadata_page.py:157 wizard_page.py:312
+#: metadata_page.py:145 metadata_page.py:151 metadata_page.py:157
+#: wizard_page.py:312
 msgid "Poster / Cover"
 msgstr "Poster / Cover"
 
@@ -1661,7 +1750,8 @@ msgstr "Protection mode"
 msgid "Quality level (1–7)"
 msgstr "Quality level (1–7)"
 
-#: movie_postprocess.py:17 movie_postprocess.py:239 musicvideo_postprocess.py:32 series_postprocess.py:51
+#: movie_postprocess.py:17 movie_postprocess.py:239 musicvideo_postprocess.py:32
+#: series_postprocess.py:51
 msgid "Rating"
 msgstr "Rating"
 
@@ -1693,7 +1783,8 @@ msgstr "Refresh cover"
 msgid "Refresh fanart"
 msgstr "Refresh fanart"
 
-#: episode_thumb_selector.py:133 series_postprocess.py:556 series_postprocess.py:755 series_postprocess.py:759 series_postprocess.py:788
+#: episode_thumb_selector.py:133 series_postprocess.py:556
+#: series_postprocess.py:755 series_postprocess.py:759 series_postprocess.py:788
 msgid "Refresh thumbnail"
 msgstr "Refresh thumbnail"
 
@@ -1824,7 +1915,8 @@ msgstr "Save artist NFO"
 msgid "Save error"
 msgstr "Save error"
 
-#: Media_Buddy.py:176 Media_Buddy.py:671 global_settings_page.py:469 wizard_page.py:535
+#: Media_Buddy.py:176 Media_Buddy.py:671 global_settings_page.py:469
+#: wizard_page.py:535
 msgid "Save failed"
 msgstr "Save failed"
 
@@ -1832,7 +1924,8 @@ msgstr "Save failed"
 msgid "Save failed."
 msgstr "Save failed."
 
-#: Media_Buddy.py:157 global_settings_page.py:68 metadata_page.py:124 other_video_page.py:113 wizard_page.py:184
+#: Media_Buddy.py:157 global_settings_page.py:68 metadata_page.py:124
+#: other_video_page.py:113 wizard_page.py:184
 msgid "Save settings"
 msgstr "Save settings"
 
@@ -1954,8 +2047,16 @@ msgid "Setting up Media-Buddy V2"
 msgstr "Setting up Media-Buddy V2"
 
 #: Media_Buddy.py:846
-msgid "Setting up Media-Buddy V2.\nMissing configuration files were created with default settings.\nExisting settings are preserved.\n\n"
-msgstr "Setting up Media-Buddy V2.\nMissing configuration files were created with default settings.\nExisting settings are preserved.\n\n"
+msgid ""
+"Setting up Media-Buddy V2.\n"
+"Missing configuration files were created with default settings.\n"
+"Existing settings are preserved.\n"
+"\n"
+msgstr ""
+"Setting up Media-Buddy V2.\n"
+"Missing configuration files were created with default settings.\n"
+"Existing settings are preserved.\n"
+"\n"
 
 #: gui_i18n.py:58
 msgid "Settings"
@@ -2005,13 +2106,18 @@ msgstr "Software fallback"
 msgid "Sort name"
 msgstr "Sort name"
 
-#: movie_postprocess.py:17 movie_postprocess.py:234 other_video_postprocess.py:43 series_postprocess.py:49
+#: movie_postprocess.py:17 movie_postprocess.py:234 other_video_postprocess.py:43
+#: series_postprocess.py:49
 msgid "Sort title"
 msgstr "Sort title"
 
 #: global_settings_page.py:287
-msgid "Sort titles and other legacy V1 options will be reviewed after the movie wizard."
-msgstr "Sort titles and other legacy V1 options will be reviewed after the movie wizard."
+msgid ""
+"Sort titles and other legacy V1 options will be reviewed after the movie "
+"wizard."
+msgstr ""
+"Sort titles and other legacy V1 options will be reviewed after the movie "
+"wizard."
 
 #: wizard_page.py:163
 msgid "Source and destination folders"
@@ -2045,11 +2151,12 @@ msgstr "Specials folder name"
 msgid "Standby"
 msgstr "Standby"
 
-#: metadata_page.py:127 other_video_page.py:116 postprocess_entry.py:24 video_test_page.py:92 wizard_page.py:187
+#: metadata_page.py:127 other_video_page.py:116 postprocess_entry.py:24
+#: video_test_page.py:92 wizard_page.py:187
 msgid "Start"
 msgstr "Start"
 
-#: metadata_runtime_ui.py:100 metadata_runtime_ui.py:35 metadata_runtime_ui.py:72
+#: metadata_runtime_ui.py:35 metadata_runtime_ui.py:72 metadata_runtime_ui.py:100
 msgid "Starting scraper…"
 msgstr "Starting scraper…"
 
@@ -2070,8 +2177,12 @@ msgid "Stop after the current file?"
 msgstr "Stop after the current file?"
 
 #: metadata_page.py:248
-msgid "Stop after the current file?\nThe current file will finish processing."
-msgstr "Stop after the current file?\nThe current file will finish processing."
+msgid ""
+"Stop after the current file?\n"
+"The current file will finish processing."
+msgstr ""
+"Stop after the current file?\n"
+"The current file will finish processing."
 
 #: metadata_page.py:261 other_video_page.py:217
 msgid "Stop immediately"
@@ -2082,16 +2193,30 @@ msgid "Stop processing"
 msgstr "Stop processing"
 
 #: wizard_page.py:614
-msgid "Stop processing IMMEDIATELY?\nThe current output file will remain incomplete.\nOriginal files remain unchanged."
-msgstr "Stop processing IMMEDIATELY?\nThe current output file will remain incomplete.\nOriginal files remain unchanged."
+msgid ""
+"Stop processing IMMEDIATELY?\n"
+"The current output file will remain incomplete.\n"
+"Original files remain unchanged."
+msgstr ""
+"Stop processing IMMEDIATELY?\n"
+"The current output file will remain incomplete.\n"
+"Original files remain unchanged."
 
 #: wizard_page.py:597
-msgid "Stop processing after the current file?\nOriginal files remain unchanged."
-msgstr "Stop processing after the current file?\nOriginal files remain unchanged."
+msgid ""
+"Stop processing after the current file?\n"
+"Original files remain unchanged."
+msgstr ""
+"Stop processing after the current file?\n"
+"Original files remain unchanged."
 
 #: metadata_page.py:262 other_video_page.py:218
-msgid "Stop processing immediately?\nThe current file may be incomplete."
-msgstr "Stop processing immediately?\nThe current file may be incomplete."
+msgid ""
+"Stop processing immediately?\n"
+"The current file may be incomplete."
+msgstr ""
+"Stop processing immediately?\n"
+"The current file may be incomplete."
 
 #: metadata_page.py:254
 msgid "Stop requested – finishing current file…"
@@ -2220,17 +2345,29 @@ msgstr "The JSON configuration file is damaged."
 
 #: series_postprocess.py:652
 #, python-brace-format
-msgid "The NFO was saved.\n{rename_warning}"
-msgstr "The NFO was saved.\n{rename_warning}"
+msgid ""
+"The NFO was saved.\n"
+"{rename_warning}"
+msgstr ""
+"The NFO was saved.\n"
+"{rename_warning}"
 
 #: wizard_page.py:840
-msgid "The batch start is not yet connected to the Mission Manager.\nNo files were changed."
-msgstr "The batch start is not yet connected to the Mission Manager.\nNo files were changed."
+msgid ""
+"The batch start is not yet connected to the Mission Manager.\n"
+"No files were changed."
+msgstr ""
+"The batch start is not yet connected to the Mission Manager.\n"
+"No files were changed."
 
 #: series_postprocess.py:803
 #, python-brace-format
-msgid "The file was not found:\n{media}"
-msgstr "The file was not found:\n{media}"
+msgid ""
+"The file was not found:\n"
+"{media}"
+msgstr ""
+"The file was not found:\n"
+"{media}"
 
 #: Media_Buddy.py:801
 msgid "The file will not be overwritten automatically."
@@ -2245,22 +2382,31 @@ msgid "The language change takes effect after restarting the program."
 msgstr "The language change takes effect after restarting the program."
 
 #: Media_Buddy.py:260 Media_Buddy.py:475
-msgid "The main window and navigation are ready.\nWizards and other functions will be added step by step."
-msgstr "The main window and navigation are ready.\nWizards and other functions will be added step by step."
+msgid ""
+"The main window and navigation are ready.\n"
+"Wizards and other functions will be added step by step."
+msgstr ""
+"The main window and navigation are ready.\n"
+"Wizards and other functions will be added step by step."
 
 #: Media_Buddy.py:181
 msgid "The new GUI language takes effect after restarting. Restart now?"
 msgstr "The new GUI language takes effect after restarting. Restart now?"
 
 #: Media_Buddy.py:473
-msgid "The originals from the last run can be deleted after confirmation via File → Delete originals."
-msgstr "The originals from the last run can be deleted after confirmation via File → Delete originals."
+msgid ""
+"The originals from the last run can be deleted after confirmation via File →"
+" Delete originals."
+msgstr ""
+"The originals from the last run can be deleted after confirmation via File →"
+" Delete originals."
 
 #: global_settings_page.py:313
 msgid "The scraper prefers available local certifications; mapping is a fallback."
 msgstr "The scraper prefers available local certifications; mapping is a fallback."
 
-#: movie_postprocess.py:271 musicvideo_postprocess.py:624 series_postprocess.py:914
+#: movie_postprocess.py:271 musicvideo_postprocess.py:624
+#: series_postprocess.py:914
 msgid "The selected folder does not exist."
 msgstr "The selected folder does not exist."
 
@@ -2270,8 +2416,12 @@ msgstr "The selected frame could not be read."
 
 #: global_settings_page.py:372
 #, python-brace-format
-msgid "The {movie} placeholder represents the final video filename without its extension."
-msgstr "The {movie} placeholder represents the final video filename without its extension."
+msgid ""
+"The {movie} placeholder represents the final video filename without its "
+"extension."
+msgstr ""
+"The {movie} placeholder represents the final video filename without its "
+"extension."
 
 #: series_postprocess.py:808
 msgid "This episode is a stub or disc placeholder and contains no playable video."
@@ -2303,7 +2453,9 @@ msgstr "Thumbnail could not be replaced: {exc}"
 msgid "Thumbnail replaced: {target_name}"
 msgstr "Thumbnail replaced: {target_name}"
 
-#: movie_postprocess.py:17 movie_postprocess.py:234 musicvideo_postprocess.py:29 other_video_postprocess.py:43 series_postprocess.py:49 series_postprocess.py:504
+#: movie_postprocess.py:17 movie_postprocess.py:234 musicvideo_postprocess.py:29
+#: other_video_postprocess.py:43 series_postprocess.py:49
+#: series_postprocess.py:504
 msgid "Title"
 msgstr "Title"
 
@@ -2412,8 +2564,14 @@ msgid "Video and stub file extensions must not overlap."
 msgstr "Video and stub file extensions must not overlap."
 
 #: wizard_page.py:388
-msgid "Video bitrate thresholds per resolution in kbit/s.\n0 = not configured yet (no automatic decision).\nThe wizard compares these values against the source video bitrate."
-msgstr "Video bitrate thresholds per resolution in kbit/s.\n0 = not configured yet (no automatic decision).\nThe wizard compares these values against the source video bitrate."
+msgid ""
+"Video bitrate thresholds per resolution in kbit/s.\n"
+"0 = not configured yet (no automatic decision).\n"
+"The wizard compares these values against the source video bitrate."
+msgstr ""
+"Video bitrate thresholds per resolution in kbit/s.\n"
+"0 = not configured yet (no automatic decision).\n"
+"The wizard compares these values against the source video bitrate."
 
 #: wizard_page.py:742
 msgid "Video errors:"
@@ -2423,7 +2581,8 @@ msgstr "Video errors:"
 msgid "Video file extensions (one per line)"
 msgstr "Video file extensions (one per line)"
 
-#: other_video_page.py:37 other_video_page.py:41 other_video_postprocess.py:219 video_test_page.py:90
+#: other_video_page.py:37 other_video_page.py:41 other_video_postprocess.py:219
+#: video_test_page.py:90
 msgid "Video folder"
 msgstr "Video folder"
 
@@ -2455,7 +2614,8 @@ msgstr "Video quality – individual profile for"
 msgid "Video remuxing in progress"
 msgstr "Video remuxing in progress"
 
-#: gui_i18n.py:73 video_test_page.py:122 video_test_page.py:128 video_test_page.py:135 video_test_page.py:138 video_test_page.py:23
+#: gui_i18n.py:73 video_test_page.py:23 video_test_page.py:122
+#: video_test_page.py:128 video_test_page.py:135 video_test_page.py:138
 msgid "Video test"
 msgstr "Video test"
 
@@ -2517,7 +2677,8 @@ msgstr "Wizards"
 msgid "Writer"
 msgstr "Writer"
 
-#: movie_postprocess.py:17 movie_postprocess.py:240 musicvideo_postprocess.py:30 other_video_postprocess.py:43
+#: movie_postprocess.py:17 movie_postprocess.py:240 musicvideo_postprocess.py:30
+#: other_video_postprocess.py:43
 msgid "Year"
 msgstr "Year"
 
@@ -2543,8 +2704,12 @@ msgstr "seconds."
 
 #: metadata_runtime_ui.py:177 metadata_runtime_ui.py:178
 #, python-brace-format
-msgid "{action} in {seconds} seconds.\nSelect “Cancel action” to keep the computer running."
-msgstr "{action} in {seconds} seconds.\nSelect “Cancel action” to keep the computer running."
+msgid ""
+"{action} in {seconds} seconds.\n"
+"Select “Cancel action” to keep the computer running."
+msgstr ""
+"{action} in {seconds} seconds.\n"
+"Select “Cancel action” to keep the computer running."
 
 #: episode_thumb_selector.py:137
 #, python-brace-format
@@ -2563,13 +2728,25 @@ msgstr "{count}/16 frames generated – select one."
 
 #: series_postprocess.py:951
 #, python-brace-format
-msgid "{date_warning}\n\nThe existing date in the NFO is preserved. Other changes were saved and editing can continue."
-msgstr "{date_warning}\n\nThe existing date in the NFO is preserved. Other changes were saved and editing can continue."
+msgid ""
+"{date_warning}\n"
+"\n"
+"The existing date in the NFO is preserved. Other changes were saved and "
+"editing can continue."
+msgstr ""
+"{date_warning}\n"
+"\n"
+"The existing date in the NFO is preserved. Other changes were saved and "
+"editing can continue."
 
 #: series_postprocess.py:655
 #, python-brace-format
-msgid "{date_warning}\nThe existing date is preserved."
-msgstr "{date_warning}\nThe existing date is preserved."
+msgid ""
+"{date_warning}\n"
+"The existing date is preserved."
+msgstr ""
+"{date_warning}\n"
+"The existing date is preserved."
 
 #: series_postprocess.py:654
 #, python-brace-format
@@ -2583,5 +2760,346 @@ msgstr "{date_warning} – date unchanged, remaining metadata saved."
 
 #: Media_Buddy.py:563
 #, python-brace-format
-msgid "{path}\n  Reason: {reason}"
-msgstr "{path}\n  Reason: {reason}"
+msgid ""
+"{path}\n"
+"  Reason: {reason}"
+msgstr ""
+"{path}\n"
+"  Reason: {reason}"
+
+msgid "Encode music"
+msgstr "Encode music"
+
+msgid "Folders"
+msgstr "Folders"
+
+msgid "Output folder"
+msgstr "Output folder"
+
+msgid "Low"
+msgstr "Low"
+
+msgid "Medium"
+msgstr "Medium"
+
+msgid "High"
+msgstr "High"
+
+msgid "Very high"
+msgstr "Very high"
+
+msgid "Maximum"
+msgstr "Maximum"
+
+msgid "Output format"
+msgstr "Output format"
+
+msgid "Quality level"
+msgstr "Quality level"
+
+msgid "Constant gain (optional)"
+msgstr "Constant gain (optional)"
+
+msgid "Sampling rate and channel count are preserved by default."
+msgstr "Sampling rate and channel count are preserved by default."
+
+msgid "Encoding settings"
+msgstr "Encoding settings"
+
+msgid "Settings saved"
+msgstr "Settings saved"
+
+msgid "Invalid folders"
+msgstr "Invalid folders"
+
+msgid "Choose an existing source folder and an output folder."
+msgstr "Choose an existing source folder and an output folder."
+
+msgid "The output folder must be separate from the source folder."
+msgstr "The output folder must be separate from the source folder."
+
+msgid "FFmpeg and FFprobe are required."
+msgstr "FFmpeg and FFprobe are required."
+
+msgid "Missing tools"
+msgstr "Missing tools"
+
+msgid "Encoding music…"
+msgstr "Encoding music…"
+
+#, python-brace-format
+msgid "File {index} of {total}: {name}"
+msgstr "File {index} of {total}: {name}"
+
+msgid "Stop after current file"
+msgstr "Stop after current file"
+
+msgid "Stopping after current file…"
+msgstr "Stopping after current file…"
+
+#, python-brace-format
+msgid "Finished: {success} encoded, {errors} errors, {skipped} skipped"
+msgstr "Finished: {success} encoded, {errors} errors, {skipped} skipped"
+
+#, python-brace-format
+msgid "Music encoding failed: {error}"
+msgstr "Music encoding failed: {error}"
+
+msgid "Processing: Encode music"
+msgstr "Processing: Encode music"
+
+msgid "Music encoding in progress"
+msgstr "Music encoding in progress"
+
+#, python-brace-format
+msgid "Audio {index} of {total}: {filename}"
+msgstr "Audio {index} of {total}: {filename}"
+
+msgid "Music encoding failed"
+msgstr "Music encoding failed"
+
+msgid "Music encoding cancelled"
+msgstr "Music encoding cancelled"
+
+msgid "Music encoding completed with errors"
+msgstr "Music encoding completed with errors"
+
+msgid "Music encoding completed"
+msgstr "Music encoding completed"
+
+#: Media_Buddy.py:499
+#, python-brace-format
+msgid "Audio {index}/{total}: {filename}"
+msgstr "Audio {index}/{total}: {filename}"
+
+msgid "Music"
+msgstr "Music"
+
+msgid "Music album metadata and lyrics"
+msgstr "Music album metadata and lyrics"
+
+msgid "Input folder"
+msgstr "Input folder"
+
+msgid "Central Kodi artist artwork folder (optional)"
+msgstr "Central Kodi artist artwork folder (optional)"
+
+msgid "Browse"
+msgstr "Browse"
+
+msgid "Download lyrics from LRCLIB"
+msgstr "Download lyrics from LRCLIB"
+
+msgid "Use plain lyrics when synchronized lyrics are unavailable"
+msgstr "Use plain lyrics when synchronized lyrics are unavailable"
+
+msgid "Search MusicBrainz when no release ID is present"
+msgstr "Search MusicBrainz when no release ID is present"
+
+msgid "Rename copied audio files"
+msgstr "Rename copied audio files"
+
+msgid "Filename pattern"
+msgstr "Filename pattern"
+
+msgid "Stop after current album"
+msgstr "Stop after current album"
+
+msgid "Choose separate, non-nested input and output folders."
+msgstr "Choose separate, non-nested input and output folders."
+
+#, python-brace-format
+msgid "Processing finished (exit code: {code})"
+msgstr "Processing finished (exit code: {code})"
+
+msgid "Music folder"
+msgstr "Music folder"
+
+msgid "Rename audio files in selected folder"
+msgstr "Rename audio files in selected folder"
+
+msgid "Invalid folder"
+msgstr "Invalid folder"
+
+msgid "Choose an existing music folder."
+msgstr "Choose an existing music folder."
+
+#, python-brace-format
+msgid "Estimated remaining: {time}"
+msgstr "Estimated remaining: {time}"
+
+msgid "Preferred album year"
+msgstr "Preferred album year"
+
+msgid "Original release year"
+msgstr "Original release year"
+
+msgid "Specific release year"
+msgstr "Specific release year"
+
+msgid "Download missing album covers and embed in audio files"
+msgstr "Download missing album covers and embed in audio files"
+
+msgid "Download missing artist artwork to configured locations"
+msgstr "Download missing artist artwork to configured locations"
+
+msgid "Create Kodi artist.nfo and album.nfo"
+msgstr "Create Kodi artist.nfo and album.nfo"
+
+msgid "Embed lyrics in audio tags"
+msgstr "Embed lyrics in audio tags"
+
+msgid "Clean unsafe HTML and JavaScript from existing lyrics"
+msgstr "Clean unsafe HTML and JavaScript from existing lyrics"
+
+msgid "General metadata settings"
+msgstr "General metadata settings"
+
+msgid "Automatically translate missing metadata texts"
+msgstr "Automatically translate missing metadata texts"
+
+msgid "Create combined artist NFOs for collaborations"
+msgstr "Create combined artist NFOs for collaborations"
+
+msgid "Album artist"
+msgstr "Album artist"
+
+msgid "Album cover"
+msgstr "Album cover"
+
+msgid "Could not save audio tags:"
+msgstr "Could not save audio tags:"
+
+msgid "Description / Comment"
+msgstr "Description / Comment"
+
+msgid "Disc"
+msgstr "Disc"
+
+msgid "Disc artwork"
+msgstr "Disc artwork"
+
+msgid "Disc artwork is not supported by this audio format."
+msgstr "Disc artwork is not supported by this audio format."
+
+msgid "Embedded artwork editing is not supported by this audio format."
+msgstr "Embedded artwork editing is not supported by this audio format."
+
+msgid "No artwork"
+msgstr "No artwork"
+
+msgid "No audio tracks found."
+msgstr "No audio tracks found."
+
+msgid "Post-processing: Music"
+msgstr "Post-processing: Music"
+
+msgid "Rebuild tags"
+msgstr "Rebuild tags"
+
+msgid ""
+"Remove all existing tags and write only the displayed metadata and artwork? "
+"This cannot be undone."
+msgstr ""
+"Remove all existing tags and write only the displayed metadata and artwork? "
+"This cannot be undone."
+
+msgid "Runtime"
+msgstr "Runtime"
+
+msgid "Save changes"
+msgstr "Save changes"
+
+msgid "Select music folder"
+msgstr "Select music folder"
+
+msgid "This audio format does not support editing these tags."
+msgstr "This audio format does not support editing these tags."
+
+msgid "Track and disc numbers must be numeric."
+msgstr "Track and disc numbers must be numeric."
+
+msgid "Track artists (separate multiple with ;)"
+msgstr "Track artists (separate multiple with ;)"
+
+msgid "Unsupported audio format."
+msgstr "Unsupported audio format."
+
+msgid "Artist editing will be added in a later test."
+msgstr "Artist editing will be added in a later test."
+
+msgid "Edit song lyrics"
+msgstr "Edit song lyrics"
+
+msgid "Song lyrics"
+msgstr "Song lyrics"
+
+msgid "Synchronize song lyrics"
+msgstr "Synchronize song lyrics"
+
+msgid ""
+"Shift all synchronized lyrics timestamps (positive = later, negative = "
+"earlier)."
+msgstr ""
+"Shift all synchronized lyrics timestamps (positive = later, negative = "
+"earlier)."
+
+msgid "Preview:"
+msgstr "Preview:"
+
+msgid "No lyrics available for this track."
+msgstr "No lyrics available for this track."
+
+msgid "No synchronized timestamps found in the lyrics."
+msgstr "No synchronized timestamps found in the lyrics."
+
+msgid "Updated synchronized lyrics timestamps:"
+msgstr "Updated synchronized lyrics timestamps:"
+
+msgid "Could not synchronize song lyrics:"
+msgstr "Could not synchronize song lyrics:"
+
+msgid "Image search"
+msgstr "Image search"
+
+msgid "No album artist available for image search."
+msgstr "No album artist available for image search."
+
+msgid "Could not open the web browser."
+msgstr "Could not open the web browser."
+
+msgid "No track artist available for image search."
+msgstr "No track artist available for image search."
+
+msgid "MyMemory contact email (optional)"
+msgstr ""
+
+msgid ""
+"Leave empty for anonymous MyMemory requests. The email is sent only to "
+"MyMemory."
+msgstr ""
+
+msgid "Rescrape track"
+msgstr "Rescrape track"
+
+msgid "Selected track processed. See the music scraper log for details."
+msgstr "Selected track processed. See the music scraper log for details."
+
+msgid "Track scraper failed:"
+msgstr "Track scraper failed:"
+
+msgid "Could not start music scraper."
+msgstr "Could not start music scraper."
+
+#, python-brace-format
+msgid "Scraping track: {track}"
+msgstr "Scraping track: {track}"
+
+#, python-brace-format
+msgid "Track scraped: {track}"
+msgstr "Track scraped: {track}"
+
+#, python-brace-format
+msgid "Track scraping failed: {track}"
+msgstr "Track scraping failed: {track}"
+

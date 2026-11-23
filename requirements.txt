@@ -6,3 +6,6 @@ PySide6
 
 yt-dlp
 smbprotocol
+
+# Audio metadata tagging (Test 191)
+mutagen

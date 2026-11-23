@@ -9,10 +9,13 @@ from datetime import datetime
 from pathlib import Path
 from wizard_page import WizardPage, RecodePage, RemuxPage, AudioNormalizePage, AppendPage
 from other_video_page import OtherVideoPage
+from music_recode_page import MusicRecodePage
+from music_scraper_page import MusicScraperPage
 from metadata_page import MetadataPage
 from series_postprocess import SeriesPostprocess
 from movie_postprocess import MoviePostprocess
 from musicvideo_postprocess import MusicvideoPostprocess
+from music_track_postprocess import MusicTrackPostprocess
 from other_video_postprocess import OtherVideoPostprocess
 from video_test_page import VideoTestPage
 from global_settings_page import GlobalSettingsPage
@@ -23,7 +26,7 @@ from configuration_store import load_raw
 from activity_log import event as activity_event
 
 try:
-    from PySide6.QtCore import Qt, QRect, QSettings, QTimer, QProcess
+    from PySide6.QtCore import Qt, QRect, QSettings, QTimer, QProcess, qInstallMessageHandler
     from PySide6.QtGui import QAction, QPixmap, QPainter, QLinearGradient, QColor
     from PySide6.QtWidgets import (
         QApplication, QFrame, QHBoxLayout, QLabel, QMainWindow, QMessageBox,
@@ -38,10 +41,10 @@ LOGO = ROOT / "assets" / "media_buddy_v2_header.png"
 
 # Vorläufige Menüstruktur. Die tatsächlichen Funktionen folgen in späteren Tests.
 SECTIONS = {
-    "Assistenten": ["Serien-Aufarbeitung", "Spielfilme-Aufarbeitung", "Musikvideo-Aufarbeitung", "Video-Aufarbeitung", "Globale Aufarbeitung", "Audio-Aufarbeitung"],
-    "Bearbeitung": ["Recode", "Remux", "Audio-Normalisieren", "Videos zusammenfügen"],
-    "Metadaten": ["Serien", "Spielfilme", "Musikvideos", "Sonstige Videos"],
-    "Nacharbeiten": ["Serien", "Spielfilme", "Musikvideos", "Sonstige Videos", "Videos-Test"],
+    "Assistenten": ["Serien-Aufarbeitung", "Spielfilme-Aufarbeitung", "Musikvideo-Aufarbeitung", "Video-Aufarbeitung", "Audio-Aufarbeitung", "Globale Aufarbeitung"],
+    "Bearbeitung": ["Recode", "Remux", "Audio-Normalisieren", "Videos zusammenfügen", "Musik kodieren"],
+    "Metadaten": ["Serien", "Spielfilme", "Musikvideos", "Sonstige Videos", "Musik"],
+    "Nacharbeiten": ["Serien", "Spielfilme", "Musikvideos", "Sonstige Videos", "Musik", "Videos-Test"],
     "Hilfsmittel": ["Werkzeuge"],
     "Einstellungen": ["Allgemein", "Assistenten", "Video", "Metadaten", "Dateinamen", "Audio", "Grafiken", "Tools"],
 }
@@ -402,9 +405,14 @@ class MainWindow(QMainWindow):
         is_languages = self._active_section == "Einstellungen" and page == "Allgemein"
         is_global_settings = self._active_section == "Einstellungen" and page in (
             "Assistenten", "Video", "Metadaten", "Dateinamen", "Audio", "Grafiken", "Tools")
-        is_wizard = (self._active_section == "Assistenten" and page in ("Serien-Aufarbeitung", "Spielfilme-Aufarbeitung", "Musikvideo-Aufarbeitung", "Video-Aufarbeitung")) or (self._active_section == "Bearbeitung" and page in ("Recode", "Remux", "Audio-Normalisieren", "Videos zusammenfügen"))
-        self.heading.setVisible(not is_wizard and not is_languages and not is_global_settings and not (self._active_section == "Metadaten" and page in ("Serien", "Spielfilme", "Musikvideos", "Sonstige Videos")))
-        self.description.setVisible(not is_wizard and not is_languages and not is_global_settings and not (self._active_section == "Metadaten" and page in ("Serien", "Spielfilme", "Musikvideos", "Sonstige Videos")))
+        is_wizard = (self._active_section == "Assistenten" and page in ("Serien-Aufarbeitung", "Spielfilme-Aufarbeitung", "Musikvideo-Aufarbeitung", "Video-Aufarbeitung", "Audio-Aufarbeitung")) or (self._active_section == "Bearbeitung" and page in ("Recode", "Remux", "Audio-Normalisieren", "Videos zusammenfügen", "Musik kodieren"))
+        self.heading.setVisible(not is_wizard and not is_languages and not is_global_settings and not (self._active_section == "Metadaten" and page in ("Serien", "Spielfilme", "Musikvideos", "Sonstige Videos", "Musik")))
+        self.description.setVisible(not is_wizard and not is_languages and not is_global_settings and not (self._active_section == "Metadaten" and page in ("Serien", "Spielfilme", "Musikvideos", "Sonstige Videos", "Musik")))
+        if self._active_section == "Metadaten" and page == "Musik":
+            key = "Metadaten/Musik"
+            if key not in self.wizard_pages:
+                self.wizard_pages[key] = MusicScraperPage()
+            self.wizard_slot.addWidget(self.wizard_pages[key])
         if self._active_section == "Metadaten" and page == "Sonstige Videos":
             # Separate cache key: metadata editor and video wizard are different pages.
             metadata_key = "Metadaten/Sonstige Videos"
@@ -420,6 +428,12 @@ class MainWindow(QMainWindow):
             key = "Nacharbeiten/Spielfilme"
             if key not in self.wizard_pages:
                 self.wizard_pages[key] = MoviePostprocess()
+            self.wizard_slot.addWidget(self.wizard_pages[key])
+        if self._active_section == "Nacharbeiten" and page == "Musik":
+            key = "Nacharbeiten/Musik"
+            if key not in self.wizard_pages:
+                self.wizard_pages[key] = MusicTrackPostprocess()
+                self.wizard_pages[key].scrape_status.connect(self._music_track_scrape_status)
             self.wizard_slot.addWidget(self.wizard_pages[key])
         if self._active_section == "Nacharbeiten" and page == "Musikvideos":
             key = "Nacharbeiten/Musikvideos"
@@ -441,7 +455,18 @@ class MainWindow(QMainWindow):
             if key not in self.wizard_pages:
                 self.wizard_pages[key] = VideoTestPage()
             self.wizard_slot.addWidget(self.wizard_pages[key])
-        if is_wizard:
+        if self._active_section == "Bearbeitung" and page == "Musik kodieren":
+            key = "Bearbeitung/Musik kodieren"
+            if key not in self.wizard_pages:
+                self.wizard_pages[key] = MusicRecodePage()
+            self.wizard_slot.addWidget(self.wizard_pages[key])
+        if self._active_section == "Assistenten" and page == "Audio-Aufarbeitung":
+            key = "Assistenten/Audio-Aufarbeitung"
+            if key not in self.wizard_pages:
+                from music_wizard_page import MusicWizardPage
+                self.wizard_pages[key] = MusicWizardPage()
+            self.wizard_slot.addWidget(self.wizard_pages[key])
+        if is_wizard and page != "Musik kodieren" and page != "Audio-Aufarbeitung":
             kind = page if page in ("Recode", "Remux", "Audio-Normalisieren", "Videos zusammenfügen") else "Serien" if page == "Serien-Aufarbeitung" else "Musikvideos" if page == "Musikvideo-Aufarbeitung" else "Sonstige Videos" if page == "Video-Aufarbeitung" else "Spielfilme"
             if kind not in self.wizard_pages:
                 self.wizard_pages[kind] = RecodePage() if kind == "Recode" else RemuxPage() if kind == "Remux" else AudioNormalizePage() if kind == "Audio-Normalisieren" else AppendPage() if kind == "Videos zusammenfügen" else WizardPage(kind)
@@ -465,7 +490,7 @@ class MainWindow(QMainWindow):
             widget = self.wizard_slot.itemAt(index).widget()
             if widget is not None:
                 widget.show()
-        if self._active_section == "Nacharbeiten" and page in ("Serien", "Spielfilme", "Musikvideos", "Sonstige Videos", "Videos-Test"):
+        if self._active_section == "Nacharbeiten" and page in ("Serien", "Spielfilme", "Musikvideos", "Sonstige Videos", "Videos-Test", "Musik"):
             self.heading.setVisible(False)
             self.description.setVisible(False)
         self.heading.setText(f"{navigation_label(self._active_section)}: {navigation_label(page)}")
@@ -490,7 +515,7 @@ class MainWindow(QMainWindow):
         if kind == "file":
             self._file_started = time.monotonic()
             self._last_progress = {}
-            self._status_text = _('Video {index}/{total}: {filename}').format(index=index, total=total, filename=value)
+            self._status_text = _('File {index}/{total}: {filename}').format(index=index, total=total, filename=value)
         elif kind == "progress" and isinstance(value, dict):
             self._last_progress = value
         elif kind == "phase":
@@ -510,6 +535,10 @@ class MainWindow(QMainWindow):
         super().resizeEvent(event)
         if hasattr(self, "_status_left"):
             self._refresh_status()
+
+    def _music_track_scrape_status(self, message):
+        self._status_text = message
+        self._refresh_status()
 
     def _refresh_status(self):
         self._status_clock.setText(datetime.now().strftime("%H:%M:%S"))
@@ -590,6 +619,7 @@ class MainWindow(QMainWindow):
             ("The Movie Database (TMDB)", "https://www.themoviedb.org/"),
             ("Fanart.tv", "https://fanart.tv/"),
             ("MusicBrainz", "https://musicbrainz.org/"),
+            ("LRCLIB", "https://lrclib.net/"),
             ("TheAudioDB", "https://www.theaudiodb.com/"),
             ("Last.fm", "https://www.last.fm/"),
             ("ChaptersDB", "https://chaptersdb.org/"),
@@ -695,6 +725,7 @@ QLabel#wizardTitle { font-size: 19px; font-weight: 700; color: #213a56; }
 QGroupBox { border: 1px solid #dbe3eb; border-radius: 6px; margin-top: 12px; padding: 10px; font-weight: 600; background: #fafcff; }
 QGroupBox::title { subcontrol-origin: margin; left: 12px; padding: 0 4px; }
 QLineEdit, QComboBox, QSpinBox, QDoubleSpinBox { background: white; border: 1px solid #cbd8e5; border-radius: 4px; padding: 5px; }
+QComboBox { font-size: 9pt; }
 QLabel#description { font-size: 13px; color: #64748b; }
 """
 
@@ -816,6 +847,38 @@ def _configuration_repair_dialog(error):
             return False
 
 
+def _install_qfont_diagnostics():
+    """Temporäre Diagnose für Qt-Fontwarnungen, ohne GUI-Eingriffe."""
+    import traceback
+    from PySide6.QtCore import QtMsgType
+
+    def qt_message_handler(message_type, context, message):
+        if 'QFont::setPointSize' not in message:
+            # Andere Qt-Meldungen weiterhin sichtbar halten.
+            print(message, file=sys.stderr, flush=True)
+            return
+        print('\n[QFONT DIAG] ' + message, file=sys.stderr, flush=True)
+        app = QApplication.instance()
+        if app is not None:
+            widget = app.widgetAt(__import__('PySide6.QtGui', fromlist=['QCursor']).QCursor.pos())
+            focused = app.focusWidget()
+            for label, obj in [('under_mouse', widget), ('focused', focused)]:
+                if obj is None:
+                    print(f'[QFONT DIAG] {label}=None', file=sys.stderr, flush=True)
+                    continue
+                font = obj.font()
+                print(f'[QFONT DIAG] {label}={type(obj).__name__} objectName={obj.objectName()!r} '
+                      f'pointSize={font.pointSize()} pixelSize={font.pixelSize()} '
+                      f'styleSheet={obj.styleSheet()[:160]!r}', file=sys.stderr, flush=True)
+        print('[QFONT DIAG] Python stack (may only show Qt event dispatch):', file=sys.stderr, flush=True)
+        traceback.print_stack(limit=14, file=sys.stderr)
+
+    # Keep the callback alive for the lifetime of the Qt application.
+    global _qfont_message_handler
+    _qfont_message_handler = qt_message_handler
+    qInstallMessageHandler(_qfont_message_handler)
+
+
 def main():
     from log_archive import rotate
     from activity_log import start as start_activity, stop as stop_activity
@@ -830,6 +893,7 @@ def main():
     else:
         print('[WARN] Vorheriges allgemeines Log konnte nicht archiviert werden.', file=sys.stderr)
     app = QApplication(sys.argv)
+    _install_qfont_diagnostics()
     app.aboutToQuit.connect(stop_activity)
     app.setApplicationName("Media-Buddy V2")
     try:

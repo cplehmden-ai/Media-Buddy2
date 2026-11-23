@@ -9,7 +9,7 @@ from PySide6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, Q
                                QPushButton, QFileDialog, QCheckBox, QProgressBar,
                                QGroupBox, QMessageBox, QDialog)
 from gui_i18n import _
-from postprocess_entry import make_entry
+from standard_entry_page import SingleFolderEntryPage
 from tool_manager import get_tool
 
 EXTENSIONS = {'.mkv', '.mp4', '.m4v', '.avi', '.mov', '.wmv', '.webm', '.mpg', '.mpeg', '.ts', '.m2ts'}
@@ -86,27 +86,27 @@ class VideoTestPage(QWidget):
         root.setContentsMargins(5, 5, 5, 5)
         root.setSpacing(0)
         self.folder = QLineEdit()
-        entry = make_entry(self.folder, self._browse, self._start,
-                           _('Post-processing: Video test'), _('Video folder'))
-        self.start = next(button for button in entry.findChildren(QPushButton)
-                          if button.text() == _('Start'))
+        entry = SingleFolderEntryPage(
+            _('Post-processing: Video test'), _('Video folder'), self.folder,
+            self._browse, self._start)
+        self.start = entry.start_button
         root.addWidget(entry)
-        # Extra controls live below the identical title/folder/start section.
-        # Insert before the shared entry's bottom stretch, not above its start.
-        layout = entry.layout()
+        options = entry.add_group(_('Test settings'))
         self.recursive = QCheckBox(_('Include subfolders'))
         self.recursive.setChecked(True)
-        layout.insertWidget(layout.count() - 1, self.recursive)
-        self.info = QLabel(_('Ready for automatic video testing.'))
-        self.info.setWordWrap(True)
-        layout.insertWidget(layout.count() - 1, self.info)
-        self.progress = QProgressBar()
+        options.addWidget(self.recursive)
+        # Runtime state is deliberately not part of the entry page: the mpv
+        # window covers it during playback. Cancellation remains in the
+        # existing two-second dialog between videos.
+        self.info = QLabel(_('Ready for automatic video testing.'), self)
+        self.info.hide()
+        self.progress = QProgressBar(self)
         self.progress.setRange(0, 1)
-        layout.insertWidget(layout.count() - 1, self.progress)
-        self.stop = QPushButton(_('Cancel test'))
+        self.progress.hide()
+        self.stop = QPushButton(_('Cancel test'), self)
         self.stop.clicked.connect(self._stop)
         self.stop.setEnabled(False)
-        layout.insertWidget(layout.count() - 1, self.stop)
+        self.stop.hide()
         prefs = QSettings('BuddyTools', 'Media-Buddy-V2')
         self.folder.setText(str(prefs.value('video_test/folder', '')))
         self.recursive.setChecked(str(prefs.value('video_test/recursive', 'true')).lower() in ('true', '1'))

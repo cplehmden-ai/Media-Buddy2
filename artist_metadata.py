@@ -13,6 +13,7 @@ import xml.etree.ElementTree as ET
 
 import requests
 from translation_manager import normalize_language, translate_plot
+from musicbrainz_rate_limit import mb_get
 
 AUDIODB = 'https://www.theaudiodb.com/api/v1/json/'
 LASTFM = 'https://ws.audioscrobbler.com/2.0/'
@@ -21,7 +22,7 @@ MB = 'https://musicbrainz.org/ws/2/artist/'
 
 def _fetch(session, url, params, timeout):
     try:
-        response = session.get(url, params=params, timeout=timeout)
+        response = mb_get(session, url, params=params, timeout=timeout)
         response.raise_for_status()
         return response.json() or {}
     except (requests.RequestException, ValueError, TypeError) as exc:

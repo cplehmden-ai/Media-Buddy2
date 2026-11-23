@@ -30,7 +30,7 @@ def _console_visible(line):
     if any(marker in upper for marker in (
         "[ERROR", "[WARN", "[ABORT", "[SKIP", "[NFO WRITE", "[RENAME", "[MOVE",
         "[RATING", "[CONFIG", "[ART WARN", "[ART WRITE", "[ART SKIP", "[NFO SKIP",
-        "[RENAME CONFLICT", "[CHAPTER", "ERROR", "FINISHED"
+        "[RENAME CONFLICT", "[CHAPTER", "[TRACK", "[ALBUM", "[SINGLES", "[TAGS", "[RESULT", "ERROR", "FINISHED"
     )):
         return True
     return text.startswith(("SERIES ", "Series found", "Processed", "Successful", "Failed",
@@ -84,7 +84,7 @@ def _cleanup(directory, max_logs):
     if isinstance(max_logs, bool) or not isinstance(max_logs, int) or max_logs < 1:
         raise ValueError("Logging.MaxFiles must be a positive integer")
     files = sorted((p for p in directory.glob("*.log") if p.is_file() and
-                    p.name.startswith(("movie_", "series_", "musicvideo_"))),
+                    p.name.startswith(("movie_", "series_", "musicvideo_", "music_"))),
                    key=lambda p: (p.stat().st_mtime_ns, p.name))
     for old in files[:max(0, len(files) - max_logs)]:
         try:

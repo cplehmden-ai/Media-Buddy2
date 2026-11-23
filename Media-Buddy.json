@@ -1,0 +1,219 @@
+{
+  "Language": "de",
+  "Language_ThreeLetter": "deu",
+  "MinimumDiscSpace": 104857600,
+  "FileIgnoreStrings": [
+    "HDTV",
+    "1080i",
+    "1080p",
+    "720p",
+    "German",
+    "DTSHD",
+    "BluRay",
+    "AVC",
+    "Remux-pmHD",
+    "-rp",
+    "DL",
+    "OPUS-ODM",
+    "OPUS",
+    "x265",
+    "UHD2BD",
+    "SEE"
+  ],
+  "FileExtensions": [
+    "*.mkv",
+    "*.mk3d",
+    "*.mp4",
+    "*.avi",
+    "*.ts",
+    "*.mpg",
+    "*.mpeg",
+    "*.vob",
+    "*.mov",
+    "*.divx",
+    "*.wmv",
+    "*.flv",
+    "*.wtv",
+    "*.dvr-ms",
+    "*.webm",
+    "*.flac",
+    "*.stub",
+    "*.disc"
+  ],
+  "FolderIgnore": [
+    ".actors",
+    "metadata",
+    "extrafanart",
+    "extrathumbs"
+  ],
+  "ReplaceChar": " ",
+  "Rating": {
+    "OverwriteRating": true,
+    "Ratings": [
+      {
+        "SetRating": "FSK 0",
+        "ContainsRating": [
+          "0",
+          "*-0",
+          "* 0",
+          "G",
+          "TV-G",
+          "TV-Y",
+          "NR"
+        ]
+      },
+      {
+        "SetRating": "FSK 6",
+        "ContainsRating": [
+          "6",
+          "*-6",
+          "* 6",
+          "PG",
+          "TV-Y7",
+          "TV-Y7-FV",
+          "TV-PG"
+        ]
+      },
+      {
+        "SetRating": "FSK 12",
+        "ContainsRating": [
+          "12",
+          "*-12",
+          "* 12",
+          "PG-13",
+          "TV-14"
+        ]
+      },
+      {
+        "SetRating": "FSK 16",
+        "ContainsRating": [
+          "16",
+          "*-16",
+          "* 16",
+          "NC-17"
+        ]
+      },
+      {
+        "SetRating": "FSK 18",
+        "ContainsRating": [
+          "18",
+          "*-18",
+          "* 18",
+          "R",
+          "X",
+          "TV-MA"
+        ]
+      }
+    ]
+  },
+  "Image": {
+    "Timeout": 30
+  },
+  "Network": {
+    "ConnectTimeout": 15,
+    "ReadTimeout": 30
+  },
+  "Country": "DE",
+  "TVShow": {
+    "MultiEpisode": {
+      "Old": true,
+      "New": true
+    }
+  },
+  "Recode": {
+    "AudioEncoder": "eac3",
+    "AudioBitrateKbps": 448,
+    "Preset": "medium",
+    "Quality": {
+      "SD": 5,
+      "720": 5,
+      "1080": 5,
+      "4K": 4
+    },
+    "AudioProcessing": {
+      "Normalize": true,
+      "NormalizeLevel": 0.95,
+      "DynamicCompression": 2
+    },
+    "SoftwareFallback": true,
+    "VideoCodec": "hevc",
+    "EncoderBackend": "auto",
+    "HardwareEncoding": true,
+    "VideoMode": "recode",
+    "AudioMode": "recode",
+    "Cutlist": {
+      "Enabled": true
+    },
+    "FullFrameAnalysis": false,
+    "DolbyVision": {
+      "AllowProfile7To81Recode": false
+    },
+    "Deinterlace": {
+      "Enabled": true
+    },
+    "Half4KFramerate": {
+      "Enabled": false
+    },
+    "ExternalSubtitles": {
+      "MuxIntoMKV": false
+    },
+    "Audio": {
+      "AudioCodec": "copy",
+      "FallbackCodec": "eac3",
+      "WhitelistEnabled": false,
+      "CodecWhitelist": [],
+      "CodecBlacklist": [],
+      "PreserveFormats": [
+        "truehd_atmos",
+        "eac3_atmos"
+      ],
+      "ProtectionMode": "additional",
+      "ProtectSurroundAbove51": false,
+      "ProtectLossless": false,
+      "EverydayDefault": true,
+      "CodecBitratesKbps": {
+        "dts": 768,
+        "eac3": 448,
+        "ac3": 448
+      },
+      "PreserveSourceBitrate": true
+    },
+    "AutoQualityStepDown": false
+  },
+  "Optimizer": {
+    "Enabled": true,
+    "Audio": {
+      "Languages": {
+        "default": 1
+      },
+      "FallbackLanguages": [
+        "eng"
+      ],
+      "FallbackCount": 1,
+      "Priority": "channels",
+      "CodecPriority": [
+        "truehd_atmos",
+        "eac3_atmos",
+        "eac3",
+        "ac3",
+        "truehd",
+        "flac",
+        "aac",
+        "dts",
+        "mp3"
+      ]
+    },
+    "Subtitles": {
+      "Languages": {
+        "default": {
+          "Normal": 0,
+          "Forced": 1
+        }
+      }
+    }
+  },
+  "Wizards": {},
+  "Audio": {
+    "ArtistArtworkPath": ""
+  }
+}

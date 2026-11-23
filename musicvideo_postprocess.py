@@ -133,7 +133,7 @@ class VideoArtworkPreview(ArtworkPreview):
 
     def choose(self):
         if not self.video: return
-        src, _ = QFileDialog.getOpenFileName(self, _('Select artwork'), '', 'Bilder (*.jpg *.jpeg *.png *.webp *.bmp)')
+        src, selected_filter = QFileDialog.getOpenFileName(self, _('Select artwork'), '', 'Bilder (*.jpg *.jpeg *.png *.webp *.bmp)')
         if not src: return
         from PySide6.QtGui import QImageReader
         im = QImageReader(src).read()
@@ -245,7 +245,7 @@ class _FrameWorker(QThread):
             try:
                 self.proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL,
                     stderr=subprocess.PIPE, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
-                _, err = self.proc.communicate()
+                stdout_data, err = self.proc.communicate()
                 if self.proc.returncode != 0:
                     message = (err or b'').decode('utf-8', errors='replace')[-500:]
                     break
@@ -285,7 +285,7 @@ class _FullResolutionFrameWorker(QThread):
             self.proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL,
                 stderr=subprocess.PIPE,
                 creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
-            _, err = self.proc.communicate()
+            stdout_data, err = self.proc.communicate()
             if self.proc.returncode != 0:
                 self.frame_ready.emit((err or b'').decode('utf-8', errors='replace')[-500:])
             else:
@@ -572,7 +572,7 @@ class MusicvideoPostprocess(QWidget):
         buttons.setVerticalSpacing(4)
         for label, fn, row, column in [
             (_('Select cover'), self.pick_cover, 0, 0),
-            (_('Edit artist'), None, 0, 1),
+            (_('Edit artist'), self.show_artists, 0, 1),
             (_('Play'), self.play, 1, 0),
             (_('Back'), self.leave, 1, 1),
         ]:
@@ -610,6 +610,10 @@ class MusicvideoPostprocess(QWidget):
         artist_scroll=QScrollArea();artist_scroll.setWidgetResizable(True);artist_scroll.setWidget(artbox)
         asplit.addWidget(artist_scroll);asplit.setSizes([180,530,290])
         self.views.addWidget(artist_page);self.pages.addWidget(edit)
+        # Reuse the actual music artist editor, not the old private NFO editor.
+        from music_hierarchy_205 import MusicHierarchy205
+        self.shared_artist_editor=MusicHierarchy205(self)
+        self.views.addWidget(self.shared_artist_editor)
         self.video_list.currentRowChanged.connect(self.switch_video)
         self.artist_list.currentRowChanged.connect(self.switch_artist)
 
@@ -683,14 +687,21 @@ class MusicvideoPostprocess(QWidget):
             QMessageBox.warning(self, _('Play'), str(exc))
 
     def show_artists(self):
-        if not self.save_current():return
-        # Use a separately configured artist root if present; never rely on obsolete <path> NFO tags.
-        folder=QFileDialog.getExistingDirectory(self,_('Select artist folder'),self.folder_edit.text())
-        if not folder:return
-        self.artist_files=scan_artists(Path(folder))
-        self.artist_list.clear();self.artist_list.addItems([p.parent.name for p in self.artist_files])
-        self.views.setCurrentIndex(1)
-        self.artist_list.setCurrentRow(0 if self.artist_files else -1)
+        if not self.current or not self.save_current():return
+        import re
+        names=[part.strip() for part in re.split(r';',self.inputs['artist'].text()) if part.strip()]
+        if not names:
+            QMessageBox.information(self,_('Music videos'),_('No artist specified.'))
+            return
+        music_root=Path(str(QSettings('BuddyTools','Media-Buddy-V2').value('postprocess/music_folder','')).strip())
+        if not music_root.is_dir():
+            QMessageBox.warning(self,_('Music videos'),_('Please select a valid music folder in music post-processing first.'))
+            return
+        self.shared_artist_editor.load_video_artists(names,music_root,self.back_from_shared_artist)
+        self.views.setCurrentWidget(self.shared_artist_editor)
+
+    def back_from_shared_artist(self):
+        self.views.setCurrentIndex(0)
 
     def switch_artist(self,index):
         if not self.artist_editor.save(): return

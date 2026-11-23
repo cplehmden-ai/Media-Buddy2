@@ -125,7 +125,39 @@ class GlobalSettingsPage(QWidget):
         row.addWidget(browse)
         row.addStretch()
         layout.addLayout(row)
-        layout.addWidget(QLabel(_('Shared folder for music videos and future music management.')))
+        layout.addWidget(QLabel(_('Shared folder for music videos and music management.')))
+        form=self._group(layout,_('Music file and folder names'))
+        for label,key,default in (
+            (_('Artist folder pattern'),'ArtistFolderPattern','{albumartist}'),
+            (_('Album folder pattern'),'AlbumFolderPattern','{year} - {album}'),
+            (_('Album track filename pattern'),'AlbumTrackPattern','{track} - {title}'),
+            (_('Compilation track filename pattern'),'CompilationTrackPattern','{track} - {artist} - {title}'),
+            (_('Single filename pattern'),'SingleTrackPattern','{artist} - {title}'),
+            (_('Disc folder pattern'),'DiscFolderPattern','CD {disc}'),
+            (_('Bonus disc folder name'),'BonusDiscFolder','Bonus CD')):
+            self._field(form,label,('Audio','Music',key),'text',default)
+        self._field(form,_('Multi-disc organization'),('Audio','Music','DiscMode'),'choice','automatic',[
+            (_('Automatic (recognize bonus discs)'),'automatic'),
+            (_('Always separate discs'),'separate'),
+            (_('Main disc and recognized bonus disc'),'bonus'),
+            (_('Flat album folder with disc prefix'),'flat')])
+        self._field(form,_('Preferred album year'),('Audio','Music','YearMode'),'choice','original',[
+            (_('Original release year'),'original'),
+            (_('Specific release year'),'release')])
+        form=self._group(layout,_('Music identification'))
+        self._field(form,_('Compilation album artist names (one per line)'),
+                    ('Audio','Music','CompilationArtists'),'list',['Various Artists','Various Artist','Various'])
+        self._field(form,_('Audio extensions (one per line)'),
+                    ('Audio','Music','Extensions'),'list',['.mp3','.flac','.wav','.m4a','.ogg','.mka'])
+        form=self._group(layout,_('Artwork storage'))
+        for label,key,default in (
+            (_('Artist artwork in central Kodi folder'),'ArtistArtworkCentral',True),
+            (_('Artist artwork in local artist folder'),'ArtistArtworkLocal',False),
+            (_('Album artwork in central Kodi folder'),'AlbumArtworkCentral',False),
+            (_('Album artwork in local album folder'),'AlbumArtworkLocal',True),
+            (_('Embed album covers in audio files when supported'),'EmbedAlbumCover',True)):
+            self._field(form,label,('Audio','Music',key),'bool',default)
+        layout.addWidget(QLabel(_('Artwork download and folder organization will be enabled when the corresponding processors are implemented.')))
         layout.addStretch()
 
     def _browse_artist_artwork(self,field):
@@ -177,12 +209,14 @@ class GlobalSettingsPage(QWidget):
     def _assistants(self):
         layout=self._tab('Assistenten')
         form=self._group(layout,_('Wizard options'))
-        self._field(form,_('Always encode when bitrate is 0'),('VideoSettings','RecodeIfBitrateZero'),'bool',False)
-        self._field(form,_('Encode all except listed video codecs'),('VideoSettings','VideoWhitelistEnabled'),'bool',False)
-        self._field(form,_('Allowed video codecs (one per line)'),('VideoSettings','VideoCodecWhitelist'),'list',[])
-        self._field(form,_('Encode all except listed audio codecs'),('Recode','Audio','WhitelistEnabled'),'bool',False)
-        self._field(form,_('Allowed audio codecs (one per line)'),('Recode','Audio','CodecWhitelist'),'list',[])
-        layout.addWidget(QLabel(_('Audio wizard settings will follow with audio processing.')))
+        self._field(form,_('Video assistants: always encode when bitrate is 0'),('VideoSettings','RecodeIfBitrateZero'),'bool',False)
+        self._field(form,_('Video assistants: copy only listed video codecs'),('VideoSettings','VideoWhitelistEnabled'),'bool',False)
+        self._field(form,_('Video codecs (one per line)'),('VideoSettings','VideoCodecWhitelist'),'list',[])
+        self._field(form,_('Video assistants: copy only listed audio codecs'),('Recode','Audio','WhitelistEnabled'),'bool',False)
+        self._field(form,_('Audio codecs in videos (one per line)'),('Recode','Audio','CodecWhitelist'),'list',[])
+        music_form=self._group(layout,_('Music assistant: audio codec whitelist'))
+        self._field(music_form,_('Copy listed music codecs without re-encoding'),('Audio','MusicWizard','WhitelistEnabled'),'bool',True)
+        self._field(music_form,_('Music audio codecs (one per line)'),('Audio','MusicWizard','CodecWhitelist'),'list',['flac','mp3','opus'])
         layout.addStretch()
 
     def _video(self):
@@ -267,6 +301,10 @@ class GlobalSettingsPage(QWidget):
 
     def _metadata(self):
         layout=self._tab('Metadaten')
+        general=self._group(layout,_('General metadata settings'))
+        self._field(general,_('Automatically translate missing metadata texts'),('Metadata','AutomaticTranslation'),'bool',True)
+        self._field(general,_('MyMemory contact email (optional)'),('Metadata','MyMemoryEmail'),'text','')
+        general.addRow(QLabel(_('Leave empty for anonymous MyMemory requests. The email is sent only to MyMemory.')))
         movie=self._group(layout,_('Movies'))
         self._extra_field(movie,_('Rename files'),'movie_scraper_config.json',('Filenaming','Rename','RenameFiles'),'bool',True)
         self._extra_field(movie,_('Movie rename pattern'),'movie_scraper_config.json',('Filenaming','Rename','Movie'))
@@ -399,6 +437,23 @@ class GlobalSettingsPage(QWidget):
                     if not isinstance(target[key],dict):raise ValueError(f'Kein JSON-Objekt: {key}')
                     target=target[key]
                 target[path[-1]]=value
+            music=data.get('Audio',{}).get('Music',{})
+            extensions=music.get('Extensions',[])
+            if not extensions or any(not isinstance(x,str) or not x.startswith('.') or len(x)<2 or not x[1:].isalnum() for x in extensions):
+                raise ValueError(_('Music extensions must be nonempty entries such as .flac.'))
+            if len({x.casefold() for x in extensions})!=len(extensions):
+                raise ValueError(_('Music extensions must not contain duplicates.'))
+            import string
+            allowed={'albumartist','artist','album','year','track','disc','title'}
+            for key in ('ArtistFolderPattern','AlbumFolderPattern','AlbumTrackPattern','CompilationTrackPattern','SingleTrackPattern','DiscFolderPattern','BonusDiscFolder'):
+                pattern=music.get(key,'')
+                if not pattern or '/' in pattern or '\\' in pattern:
+                    raise ValueError(_('Invalid music naming pattern: ') + key)
+                try:
+                    fields=[name for literal_text,name,format_spec,conversion in string.Formatter().parse(pattern) if name is not None]
+                    if any(name not in allowed for name in fields):raise ValueError(key)
+                except ValueError:
+                    raise ValueError(_('Invalid music naming pattern: ') + key)
             # Validate audio selections before writing anything.
             from audio_plan import PRESERVABLE, PROTECTION_MODES
             audio=data.get('Recode',{}).get('Audio',{})

@@ -440,27 +440,60 @@ class MoviePostprocess(QWidget):
             self.metadata_poster.folder=folder
             self.metadata_poster.pixmap=pix
             self.metadata_poster.refresh_icon()
+    def _diagnose_video_action(self, action):
+        """Report the exact selected media path without changing the selection."""
+        if not self.current:
+            message = _('{action}: No movie selected.').format(action=action)
+            print('[MOVIE POSTPROCESS DIAG]', message, flush=True)
+            self.report(message)
+            return None
+        video, nfo = self.current
+        try:
+            exists = video.is_file()
+            nfo_exists = nfo.is_file()
+            suffix = video.suffix.lower()
+            folder_exists = video.parent.is_dir()
+            actual_files = ([entry.name for entry in video.parent.iterdir()
+                             if entry.is_file() and entry.suffix.lower() in
+                             ('.mkv', '.mp4', '.avi', '.mov', '.m4v', '.wmv', '.ts', '.stub', '.disc')]
+                            if folder_exists else [])
+            message = (f'[MOVIE POSTPROCESS DIAG] action={action!r} '
+                       f'video={str(video)!r} exists={exists} suffix={suffix!r} '
+                       f'nfo={str(nfo)!r} nfo_exists={nfo_exists} '
+                       f'folder_exists={folder_exists} folder_videos={actual_files!r}')
+        except (OSError, ValueError) as exc:
+            message = f'[MOVIE POSTPROCESS DIAG] action={action!r} video={str(video)!r} error={exc!r}'
+            exists = False
+        print(message, flush=True)
+        self.report(message)
+        return video if exists else None
+
     def retag(self):
         if not self.current or not self.save_current():return
-        if self.current[0].suffix.lower() != '.mkv':
+        video = self._diagnose_video_action('Retag')
+        if video is None:return
+        if video.suffix.lower() != '.mkv':
             self.report(_('Retagging: Only Matroska files can be tagged.'))
             return
         from tool_manager import get_tool
         try: executable=get_tool('mkvpropedit')
         except (OSError,ValueError,FileNotFoundError) as exc:
             QMessageBox.warning(self,_('Retag'),str(exc));return
-        self.worker=TagWorker(self.current[0],executable,self);self.worker.done.connect(self.tag_done)
+        self.worker=TagWorker(video,executable,self);self.worker.done.connect(self.tag_done)
         self.tag.setEnabled(False);self.worker.start();self.report(_('Retagging …'))
     def tag_done(self,message):self.tag.setEnabled(True);self.report(message)
     def play(self):
-        if not self.current:return
-        video=self.current[0]
+        video=self._diagnose_video_action('Play')
+        if video is None:return
         if video.suffix.lower() in ('.stub','.disc'):
             QMessageBox.information(self,_('Play'),_('Placeholder files cannot be played.'));return
         try:
             import subprocess
             from tool_manager import get_tool
-            subprocess.Popen([get_tool('mpv'),str(video)])
+            executable = get_tool('mpv')
+            print(f'[MOVIE POSTPROCESS DIAG] mpv={str(executable)!r} video={str(video)!r}', flush=True)
+            process = subprocess.Popen([str(executable),str(video)])
+            print(f'[MOVIE POSTPROCESS DIAG] mpv_started_pid={process.pid}', flush=True)
         except (OSError,ValueError) as exc:QMessageBox.warning(self,_('Play'),str(exc))
     def leave(self):
         if self.save_current():self.pages.setCurrentIndex(0)
