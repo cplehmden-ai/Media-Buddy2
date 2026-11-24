@@ -346,6 +346,17 @@ class MainWindow(QMainWindow):
         if editor is not None:
             editor.open_folder(folder_override=str(target))
 
+    def open_music_postprocess_for_folder(self, folder):
+        target = Path(folder).expanduser()
+        if not folder or not target.is_dir():
+            QMessageBox.warning(self, _('Post-processing'),
+                                _('Destination folder does not exist: {target}').format(target=target))
+            return
+        self.select_section('Nacharbeiten', initial_page='Musik')
+        editor = self.wizard_pages.get('Nacharbeiten/Musik')
+        if editor is not None:
+            editor.open_folder(folder_override=str(target))
+
     def select_section(self, section, initial_page=None):
         if getattr(self, "_active_section", None) == "Nacharbeiten" and getattr(self, "_active_page", None) == "Serien":
             editor = self.wizard_pages.get("Nacharbeiten/Serien")

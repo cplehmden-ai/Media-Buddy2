@@ -243,7 +243,7 @@ class WizardPage(QWidget):
         self.end_action = QComboBox()
         self.end_action.addItem(_('Do nothing'), 'none')
         self.end_action.addItem(_('Exit program'), 'exit')
-        if self.kind in ('Serien', 'Spielfilme', 'Sonstige Videos'):
+        if self.kind in ('Serien', 'Spielfilme', 'Sonstige Videos', 'Musik-Assistent'):
             self.end_action.addItem(_('Open post-processing'), 'postprocess')
         for key, label in [('standby', _('Standby')), ('hibernate', _('Hibernate')), ('shutdown', _('Shut down PC'))]:
             if key in available_actions():
@@ -798,6 +798,10 @@ class WizardPage(QWidget):
                 output_folder = str(self.target.text().strip())
                 box.finished.connect(lambda _result, folder=output_folder:
                                      self._open_other_video_postprocess(folder))
+            elif action == 'postprocess' and self.kind == 'Musik-Assistent':
+                output_folder = str(self.target.text().strip())
+                box.finished.connect(lambda _result, folder=output_folder:
+                                     self._open_music_postprocess(folder))
             elif action in ('standby', 'hibernate', 'shutdown'):
                 # Dialog zuerst schließen, dann separaten Countdown öffnen.
                 box.finished.connect(lambda _result, a=action: self._show_power_countdown(a))
@@ -824,6 +828,13 @@ class WizardPage(QWidget):
         else:
             QMessageBox.warning(self, _('Post-processing'),
                                 _('Post-processing for other videos is unavailable.'))
+
+    def _open_music_postprocess(self, folder):
+        host = self.window()
+        if hasattr(host, 'open_music_postprocess_for_folder'):
+            host.open_music_postprocess_for_folder(folder)
+        else:
+            QMessageBox.warning(self, _('Post-processing'), _('Unavailable'))
 
     def _show_power_countdown(self, action):
         # 60-second cancelable countdown.
